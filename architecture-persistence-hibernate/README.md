@@ -1,12 +1,10 @@
-# architecture-persistence
+# architecture-persistence-hibernate
 
-Este proyecto representa a una **librería de arquitectura** relacionada con la **persistencia** para desarrollar las diferentes partes de forma homogenea
+Este proyecto representa a una **librería de arquitectura** relacionada con la **persistencia con Hibernate** para desarrollar las diferentes partes de forma homogenea
 
 Esta librería destaca por :
 
-* Proporciona una propuesta de **interfaz genérica** para implementar **repositorios**
-* Proporciona una propuesta de **implementación** de la **interfaz genérica** para su **uso en memoria** (List y Map)
-* Proporciona **clases de utilidades** para facilitar los desarrollos sobre persistencia
+* Proporciona una propuesta de **implementación** de la **interfaz genérica** para **Hibernate**
 * Definir los **frameworks de persistencia** y su versionado
 
 
@@ -18,11 +16,11 @@ Esta librería destaca por :
 Dependencias con proyectos de arquitectura
 
 * **architecture-testing** [1.0.0-SNAPSHOT] : Librería de arquitectura para testing utilizada en el ámbito de test
+* **architecture-persistence** [1.0.0-SNAPSHOT] : Librería de arquitectura para persistencia
 
 Dependencias terceros
 
-* **h2** [1.4.196] : Framework de base de datos en memoria
-* **liquibase** [1.10.19] : Framework para gestión de cambios en la base de datos
+* **hibernate** [5.4.1.Final] : Framework de persistencia
 
 
 ## Prerrequisitos

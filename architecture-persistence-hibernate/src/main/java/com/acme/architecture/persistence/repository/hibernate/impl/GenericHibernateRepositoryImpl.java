@@ -1,4 +1,4 @@
-package com.acme.architecture.persistence.repository.impl;
+package com.acme.architecture.persistence.repository.hibernate.impl;
 
 import java.io.Serializable;
 import java.lang.reflect.ParameterizedType;
@@ -6,7 +6,6 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import org.hibernate.HibernateException;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -20,10 +19,6 @@ public class GenericHibernateRepositoryImpl<T, PK extends Serializable> implemen
 
 	private Class<? extends T> daoType;
 
-	protected final void setDaoType(final Class<T> clazzToSet) {
-		daoType = clazzToSet;
-    }
-	
 	@SuppressWarnings("unchecked")
 	public GenericHibernateRepositoryImpl() {
 		daoType = (Class<T>) ((ParameterizedType) getClass()
@@ -38,16 +33,6 @@ public class GenericHibernateRepositoryImpl<T, PK extends Serializable> implemen
 	}
 
 	protected final Session currentSession() {
-		
-		Session session = null;
-		
-		try {
-		    session = sessionFactory.getCurrentSession();
-		} 
-		catch (HibernateException e){
-		    session = sessionFactory.openSession();
-		}
-		
 		return sessionFactory.getCurrentSession();
 	}
 
@@ -64,7 +49,6 @@ public class GenericHibernateRepositoryImpl<T, PK extends Serializable> implemen
 	@Override
 	public final void update(final T object) {
 		currentSession().saveOrUpdate(object);
-		//currentSession().merge(object);
 	}
 
 	@SuppressWarnings("unchecked")

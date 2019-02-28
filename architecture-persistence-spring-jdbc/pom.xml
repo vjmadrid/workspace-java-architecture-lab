@@ -2,54 +2,70 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>com.acme.architecture.persistence</groupId>
-	<artifactId>architecture-persistence</artifactId>
+	<groupId>com.acme.architecture.persistence.spring.jdbc</groupId>
+	<artifactId>architecture-persistence-spring-jdbc</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>architecture-persistence</name>
+	<name>architecture-persistence-spring-jdbc</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
+		
+		<spring.version>4.2.0.RELEASE</spring.version>
+		
 		<maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
 		<maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
 	</properties>
-
+	
 	<dependencies>
-
+		
 		<!-- *** Architecture Libraries *** -->
 
 		<!-- Modules -->
+		
 		<dependency>
 			<groupId>com.acme.architecture.testing</groupId>
 			<artifactId>architecture-testing</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
-
-		<!-- *** Third Party Libraries *** -->
-
-		<!-- h2 : H2 Database Engine -->
+		
 		<dependency>
-			<groupId>com.h2database</groupId>
-			<artifactId>h2</artifactId>
-			<version>1.4.196</version>
+			<groupId>com.acme.architecture.persistence</groupId>
+			<artifactId>architecture-persistence</artifactId>
+			<version>1.0.0-SNAPSHOT</version>
+ 		</dependency>
+ 		
+ 		<!-- *** Third Party Libraries *** -->
+ 		
+ 		<!-- spring-jdbc : JDBC implemented Spring -->
+ 		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-jdbc</artifactId>
+			<version>${spring.version}</version>
 		</dependency>
-
-		<!-- liquibase-core : Liquibase Core -->	
+		
+		<!-- c3p0 : JDBC Connection Pooling -->
 		<dependency>
-			<groupId>org.liquibase</groupId>
-			<artifactId>liquibase-core</artifactId>
-			<version>3.6.3</version>
+			<groupId>com.mchange</groupId>
+			<artifactId>c3p0</artifactId>
+			<version>0.9.5.1</version>
 		</dependency>
-
-	</dependencies>
+		
+		<!-- commons-dbcp2 : Database Connection Pooling -->
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-dbcp2</artifactId>
+			<version>2.6.0</version>
+		</dependency>
+		
+	</dependencies>	
 
 	<build>
-		<finalName>architecture-persistence</finalName>
+		<finalName>architecture-persistence-spring-jdbc</finalName>
 		<plugins>
 
 			<!-- Plugin used to compile the project source -->

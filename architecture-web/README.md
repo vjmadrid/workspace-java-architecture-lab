@@ -1,9 +1,12 @@
-# architecture-web-jsf
+# architecture-web
 
-Este proyecto representa a una **librería de arquitectura** relacionada con la impementación de la capa web en base a **JSF** para desarrollar las diferentes partes de forma homogenea
+Este proyecto representa a una **librería de arquitectura** relacionada con la impementación de la capa **web** para desarrollar las diferentes partes de forma homogenea
 
 Esta librería destaca por :
 
+* Proporcionar **clases de constantes globales** para el ámbito web
+* Proporcionar **clases de utilidades** que facilitarán el trabajo con diferentes elementos relacionados con el ámbito web
+* Proporciona una propuesta de **implementación** de la **controller genérico**
 * Definir los **frameworks web / jsf** y su versionado
 
 
@@ -15,13 +18,15 @@ Esta librería destaca por :
 Dependencias con proyectos de arquitectura
 
 * **architecture-testing** [1.0.0-SNAPSHOT] : Librería de arquitectura para testing utilizada en el ámbito de test
-* **architecture-web** [1.0.0-SNAPSHOT] : Librería de arquitectura para la generación de aplicaciones web
 
 Dependencias terceros
 
+* **javax.servlet-api** [3.1.0] : Facilita el uso de Servlets
+* **jsp-api** [2.2] : Facilita el uso de JSPs
+* **jstl** [1.2] : Facilita el uso de JSTL
+* **taglibs** [1.1.2] : Facilita el uso de JSTL
 * **jsf-api** [2.2.15] : Facilita el uso de JSF
-* **primefaces** [6.1] : Framework impementación de JSF
-* **primefaces-extensions** [6.1] : Extensiones para el framework Primefaces
+* **jackson** [2.9.8] : Facilita la implementación de JSON
 
 
 ## Prerrequisitos

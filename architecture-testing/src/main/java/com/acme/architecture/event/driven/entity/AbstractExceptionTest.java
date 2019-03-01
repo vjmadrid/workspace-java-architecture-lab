@@ -1,4 +1,4 @@
-package com.acme.architecture.testing.exception.test;
+package com.acme.architecture.event.driven.entity;
 
 import static org.junit.Assert.assertThat;
 import static org.hamcrest.Matchers.containsString;

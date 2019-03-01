@@ -18,6 +18,10 @@ public class GenericHibernateRepositoryImpl<T, PK extends Serializable> implemen
 	private SessionFactory sessionFactory;
 
 	private Class<? extends T> daoType;
+	
+	protected final void setDaoType(final Class<T> clazzToSet) {
+		daoType = clazzToSet;
+    }
 
 	@SuppressWarnings("unchecked")
 	public GenericHibernateRepositoryImpl() {

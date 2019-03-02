@@ -1,4 +1,4 @@
-package com.acme.architecture.common.constant;
+package com.acme.architecture.event.driven.constant;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -6,12 +6,12 @@ import org.junit.Test;
 
 import com.acme.architecture.event.driven.factory.JUnitTestBuilder;
 
-public class SpringConfigConstantTest {
+public class GenericEventConstantTest {
 
 	@Test
 	public void checkWellFormattedClass() throws NoSuchMethodException, InvocationTargetException,
 			InstantiationException, IllegalAccessException {
-		JUnitTestBuilder.assertUtilityClassWellDefined(SpringConfigConstant.class);
+		JUnitTestBuilder.assertUtilityClassWellDefined(GenericEventConstant.class);
 	}
 
 }

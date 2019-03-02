@@ -1,0 +1,33 @@
+package com.acme.architecture.event.driven.factory.dummy;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+import com.acme.architecture.event.driven.constant.DummyGenericEventConstant;
+import com.acme.architecture.event.driven.entity.GenericEvent;
+import com.acme.architecture.event.driven.factory.GenericEventDataFactory;
+
+public final class DummyGenericEventDataFactory {
+
+	public static GenericEvent createSampleDefault() {
+		return GenericEventDataFactory.create(DummyGenericEventConstant.TEST_GENERIC_EVENT_1_ID,DummyGenericEventConstant.TEST_GENERIC_EVENT_1_PARENT_ID, DummyGenericEventConstant.TEST_GENERIC_EVENT_1_NAME,DummyGenericEventConstant.TEST_GENERIC_EVENT_1_TYPE, DummyGenericEventConstant.TEST_GENERIC_EVENT_1_AUTHOR, DummyGenericEventConstant.TEST_GENERIC_EVENT_1_EXPIRATION_SECONDS, DummyGenericEventConstant.TEST_GENERIC_EVENT_1_PAYLOAD);
+	}
+	
+	public static Map<String,GenericEvent> createSampleMap() {
+		final Map<String,GenericEvent> map = new HashMap<>(); 
+		map.put(DummyGenericEventConstant.TEST_GENERIC_EVENT_1_ID, GenericEventDataFactory.create(DummyGenericEventConstant.TEST_GENERIC_EVENT_1_ID,DummyGenericEventConstant.TEST_GENERIC_EVENT_1_PARENT_ID, DummyGenericEventConstant.TEST_GENERIC_EVENT_1_NAME,DummyGenericEventConstant.TEST_GENERIC_EVENT_1_TYPE, DummyGenericEventConstant.TEST_GENERIC_EVENT_1_AUTHOR, DummyGenericEventConstant.TEST_GENERIC_EVENT_1_EXPIRATION_SECONDS, DummyGenericEventConstant.TEST_GENERIC_EVENT_1_PAYLOAD));
+		map.put(DummyGenericEventConstant.TEST_GENERIC_EVENT_2_ID, GenericEventDataFactory.create(DummyGenericEventConstant.TEST_GENERIC_EVENT_2_ID,DummyGenericEventConstant.TEST_GENERIC_EVENT_2_PARENT_ID, DummyGenericEventConstant.TEST_GENERIC_EVENT_2_NAME,DummyGenericEventConstant.TEST_GENERIC_EVENT_2_TYPE, DummyGenericEventConstant.TEST_GENERIC_EVENT_2_AUTHOR, DummyGenericEventConstant.TEST_GENERIC_EVENT_2_EXPIRATION_SECONDS, DummyGenericEventConstant.TEST_GENERIC_EVENT_2_PAYLOAD));
+		map.put(DummyGenericEventConstant.TEST_GENERIC_EVENT_3_ID, GenericEventDataFactory.create(DummyGenericEventConstant.TEST_GENERIC_EVENT_3_ID,DummyGenericEventConstant.TEST_GENERIC_EVENT_3_PARENT_ID, DummyGenericEventConstant.TEST_GENERIC_EVENT_3_NAME,DummyGenericEventConstant.TEST_GENERIC_EVENT_3_TYPE, DummyGenericEventConstant.TEST_GENERIC_EVENT_3_AUTHOR, DummyGenericEventConstant.TEST_GENERIC_EVENT_3_EXPIRATION_SECONDS, DummyGenericEventConstant.TEST_GENERIC_EVENT_3_PAYLOAD));		
+		return map;
+	}
+	
+	public static List<GenericEvent> createSampleList() {
+		final List<GenericEvent> list = new ArrayList<>();
+		list.add(GenericEventDataFactory.create(DummyGenericEventConstant.TEST_GENERIC_EVENT_1_ID,DummyGenericEventConstant.TEST_GENERIC_EVENT_1_PARENT_ID, DummyGenericEventConstant.TEST_GENERIC_EVENT_1_NAME,DummyGenericEventConstant.TEST_GENERIC_EVENT_1_TYPE, DummyGenericEventConstant.TEST_GENERIC_EVENT_1_AUTHOR, DummyGenericEventConstant.TEST_GENERIC_EVENT_1_EXPIRATION_SECONDS, DummyGenericEventConstant.TEST_GENERIC_EVENT_1_PAYLOAD));
+		list.add(GenericEventDataFactory.create(DummyGenericEventConstant.TEST_GENERIC_EVENT_2_ID,DummyGenericEventConstant.TEST_GENERIC_EVENT_2_PARENT_ID, DummyGenericEventConstant.TEST_GENERIC_EVENT_2_NAME,DummyGenericEventConstant.TEST_GENERIC_EVENT_2_TYPE, DummyGenericEventConstant.TEST_GENERIC_EVENT_2_AUTHOR, DummyGenericEventConstant.TEST_GENERIC_EVENT_2_EXPIRATION_SECONDS, DummyGenericEventConstant.TEST_GENERIC_EVENT_2_PAYLOAD));
+		list.add(GenericEventDataFactory.create(DummyGenericEventConstant.TEST_GENERIC_EVENT_3_ID,DummyGenericEventConstant.TEST_GENERIC_EVENT_3_PARENT_ID, DummyGenericEventConstant.TEST_GENERIC_EVENT_3_NAME,DummyGenericEventConstant.TEST_GENERIC_EVENT_3_TYPE, DummyGenericEventConstant.TEST_GENERIC_EVENT_3_AUTHOR, DummyGenericEventConstant.TEST_GENERIC_EVENT_3_EXPIRATION_SECONDS, DummyGenericEventConstant.TEST_GENERIC_EVENT_3_PAYLOAD));
+		return list;
+	}
+	
+}

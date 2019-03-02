@@ -1,14 +1,15 @@
-# architecture-common
+# architecture-event-driven
 
-Este proyecto representa a una **librería de arquitectura** relacionada con **elementos comunes a cualquier proyecto** para desarrollar las diferentes partes de forma homogenea
+Este proyecto representa a una **librería de arquitectura** relacionada con la creación de un **modelo de gestión de eventos** para desarrollar las diferentes partes de forma homogenea
 
 Esta librería destaca por :
 
-* Proporcionar **clases de constantes globales**
-* Proporcionar **clases de utilidades** que facilitarán el trabajo con diferentes elementos : conversores, transformadores, etc.
-* Proporcionar una **excepción generica** "AcmeException" para disponer de un tipo de excepción diferenciadora en el proyecto (el resto de excepciones deberían de heredar de ella)
-* Proporciona un **componente abstracto de generación de entidades o modelos** 
-
+* Proporcionar **clases de constantes**
+* Proporcionar una **clase genérica de evento**
+* Proporcionar una **tipología genérica de evento** 
+* Proporcionar **clases de utilidad** : factory, validadores, etc. 
+* Proporcionar una **excepción generica** "EventDrivenException" para disponer de un tipo de excepción diferenciadora en el proyecto (el resto de excepciones deberían de heredar de ella)
+Nota : Esta excepción hereda de la excepción global de arquitectura
 
 ## Stack Tecnológico
 
@@ -18,13 +19,13 @@ Esta librería destaca por :
 Dependencias con proyectos de arquitectura
 
 * **architecture-testing** [1.0.0-SNAPSHOT] : Librería de arquitectura para testing utilizada en el ámbito de test
+* **architecture-common** [1.0.0-SNAPSHOT] : Librería de arquitectura para proporcionar los elementos globales a los proyectos
+
+
 
 Dependencias terceros
 
-* **commons-lang3** [3.8.1] : Framework de utilidades para las clases
-* **slf4j-api** [1.7.25] : Framework para la definición de loggin
-* **log4j-over-slf4j** [1.10.19] : Implementación de log4j
-* **logback** [1.2.3] : Framework de logging
+Las proporcionadas por las librerías de arquitectura
 
 
 ## Prerrequisitos

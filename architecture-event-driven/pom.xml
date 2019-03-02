@@ -32,9 +32,8 @@
 		
 		<dependency>
 			<groupId>com.acme.architecture.common</groupId>
-			<artifactId>architecture-event-driven</artifactId>
+			<artifactId>architecture-common</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
-			<scope>test</scope>
 		</dependency>
 
 		<!-- *** Third Party Libraries *** -->

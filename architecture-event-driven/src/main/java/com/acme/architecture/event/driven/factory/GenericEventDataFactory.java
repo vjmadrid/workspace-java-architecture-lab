@@ -24,6 +24,4 @@ public final class GenericEventDataFactory {
 		return create(String.valueOf(id), String.valueOf(parentId), name,   type,  author,  expirationSeconds,  payload);
 	}
 	
-	
-
 }

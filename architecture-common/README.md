@@ -22,6 +22,9 @@ Dependencias con proyectos de arquitectura
 Dependencias terceros
 
 * **commons-lang3** [3.8.1] : Framework de utilidades para las clases
+* **commons-collections4** [4.3] : Framework de utilidades para trabajar con colecciones
+* **jackson-databind** [2.9.8] : Librería para trabajar con Jackson
+* **jackson-datatype-jsr310** [2.9.8] : Librería para dar soporte JSR-310 (Java 8 Date & Time API) data types
 * **slf4j-api** [1.7.25] : Framework para la definición de loggin
 * **log4j-over-slf4j** [1.10.19] : Implementación de log4j
 * **logback** [1.2.3] : Framework de logging

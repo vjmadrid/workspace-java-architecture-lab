@@ -4,8 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import org.junit.Test;
 
-import com.acme.architecture.testing.util.JUnitTestBuilder;
-import com.acme.architecture.web.constant.GlobalWebConstant;
+import com.acme.architecture.event.driven.factory.JUnitTestBuilder;
 
 public class GlobalWebConstantTest {
 

@@ -1,66 +1,65 @@
 # architecture-testing
 
-Este proyecto representa a una **librería de arquitectura** relacionada con **testing** para desarrollar las diferentes partes de forma homogenea
+This project represents a **architecture library (dependency)** related with **testing** to develop the different parts in a homogeneus way
 
-Esta librería destaca por :
+This library stands out for:
 
-* Proporciona **clases de utilidades** para facilitar las pruebas con ciertos elementos : excepciones, clases con constantes, etc. 
-* Definir los **frameworks de testing** y su versionado
+* Provides **utility classes** to facilitaty testing with certain elements : exceptions, constant classes, etc. 
+* Define **testing framework** and their versioning
 
 
-## Stack Tecnológico
+## Technological Stack
 
 * Java 8
-* [Maven 3](https://maven.apache.org/) - Gestión de dependencias
+* [Maven 3](https://maven.apache.org/) - Dependency Management
 
-Dependencias 
+Dependencies 
 
-* **hamcrest** [1.3] : Framework para matching / asserts
-* **assertj-core** [3.12.0] : Framework para matching / asserts
-* **mockito** [1.10.19] : Framework para mocking
-* **junit** [4.12] : Framework para test unitarios
-
-
-## Prerrequisitos
-
-Se definen que elementos se necesitan para instalar el software
-
-* Tener instalado Java 8 (Se requiere versión 1.5+)
-* Tener instalado Maven (Se aconseja que sea 3+)
+* **hamcrest** [1.3] : Matching / asserts framework
+* **assertj-core** [3.12.0] : Matching / asserts framework
+* **mockito** [1.10.19] : Mocking framework
+* **junit** [4.12] : Unity test framework
 
 
-### Instalación
+## Prerequisites
 
-Pasos a seguir 
+Define what elements are needed to install the software
 
-* Arrancar la consola
-* Situarse en el PATH de instalación (el lugar donde se encuentra el proyecto)
-* Verificar que se encuentra disponible el fichero "pom.xml"
+* Java 8 installed (1.5+ version required)
+* Maven installed  (3+)
 
-Ejecutar el siguiente comando
+
+## Installation
+
+Steps to follow 
+
+* Start a terminal
+* To be located in the PATH of installation (the place where the project is located)
+* Verify that the file "pom.xml" is available
+
+Execute the following command
 
 ```bash
 mvn clean install
 ```
 
-El resultado será la generación de un artefacto en tu repositorio maven
+The result will be the generation of an artifact in your maven repository
 
 
 ## Testing
 
-Este proyecto NO dispone de test
+No use test
 
+## Deploy
 
-## Despliegue
+Custom Library
 
-No aplica
+## Versioning
 
+**Note :** [SemVer](http://semver.org/) is used for the versioning. 
+To see the available versions access the repository tags
 
-## Versionado
-
-**Nota :** Se utiliza [SemVer](http://semver.org/) para el versionado. 
-Para ver las versiones disponibles acceder a los tags del repositorio
-
-## Autores
+## Authors
 
 * **Víctor Madrid**
+

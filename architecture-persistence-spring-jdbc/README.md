@@ -1,70 +1,71 @@
 # architecture-persistence-spring-jdbc
 
-Este proyecto representa a una **librería de arquitectura** relacionada con la **persistencia del framework Spring** para desarrollar las diferentes partes de forma homogenea
-
-Esta librería destaca por :
-
-* Proporciona una propuesta de **implementación** de la **interfaz genérica** para **spring-jdbc**
-* Definir los **frameworks de persistencia** y su versionado
+This project represents a **architecture library (dependency)** related with **persistence with Spring JDBC** to develop the different parts in a homogeneous way
 
 
-## Stack Tecnológico
+This library stands out for:
+
+* Provides a proposal for **implementation** of the **generic interface** for **Spring JDBC**.
+* Define the **Hibernate framework** and their versioning
+
+
+## Technological Stack
 
 * Java 8
-* [Maven 3](https://maven.apache.org/) - Gestión de dependencias
+* [Maven 3](https://maven.apache.org/) - Dependency Management
 
-Dependencias con proyectos de arquitectura
+Dependencies with architecture projects
 
-* **architecture-testing** [1.0.0-SNAPSHOT] : Librería de arquitectura para testing utilizada en el ámbito de test
-* **architecture-persistence** [1.0.0-SNAPSHOT] : Librería de arquitectura para persistencia
+* **architecture-testing** [1.0.0-SNAPSHOT] : Architecture library for testing used in the test environment
+* **architecture-persistence** [1.0.0-SNAPSHOT] : Architectural library for persistence
 
-Dependencias terceros
+Third Party Dependencies
 
-* **spring-jdbc** [4.2.0.RELEASE] : Implementación de Spring para JDBC (Impone librerías por transitividad)
-* **commons-dbcp2** [2.6.0] : Framework para conseguir connection Pooling
-* **c3p0** [1.10.19] : Framework para conseguir connection Pooling y cache de Statement
-
-
-## Prerrequisitos
-
-Se definen que elementos se necesitan para instalar el software
-
-* Tener instalado Java 8 (Se requiere versión 1.5+)
-* Tener instalado Maven (Se aconseja que sea 3+)
+* **spring-jdbc** [4.2.0.RELEASE] : Implementation of Spring for JDBC (Imposes transitivity libraries)
+* **commons-dbcp2** [2.6.0] : Framework to get connection Pooling
+* **c3p0** [1.10.19] : Framework to get connection Pooling and Statement cache
 
 
-### Instalación
+## Prerequisites
 
-Pasos a seguir 
+Define what elements are needed to install the software
 
-* Arrancar la consola
-* Situarse en el PATH de instalación (el lugar donde se encuentra el proyecto)
-* Verificar que se encuentra disponible el fichero "pom.xml"
+* Java 8 installed (1.5+ version required)
+* Maven installed  (3+)
 
-Ejecutar el siguiente comando
+
+## Installation
+
+Steps to follow
+
+* Start a terminal
+* To be located in the PATH of installation (the place where the project is located)
+* Verify that the file "pom.xml" is available
+
+Execute the following command
 
 ```bash
 mvn clean install
 ```
 
-El resultado será la generación de un artefacto en tu repositorio maven
+The result will be the generation of an artifact in your maven repository
 
 
 ## Testing
 
-Este proyecto NO dispone de test
+This project does NOT have a test
 
 
-## Despliegue
+## Deploy
 
-No aplica
+N/A
 
 
-## Versionado
+## Versioning
 
-**Nota :** Se utiliza [SemVer](http://semver.org/) para el versionado. 
-Para ver las versiones disponibles acceder a los tags del repositorio
+**Note :** [SemVer](http://semver.org/) is used for the versioning. 
+To see the available versions access the repository tags
 
-## Autores
+## Authors
 
 * **Víctor Madrid**

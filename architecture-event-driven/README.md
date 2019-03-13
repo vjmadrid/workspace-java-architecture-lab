@@ -1,74 +1,68 @@
 # architecture-event-driven
 
-Este proyecto representa a una **librería de arquitectura** relacionada con la creación de un **modelo de gestión de eventos** para desarrollar las diferentes partes de forma homogenea
+This project represents a **architecture library (dependency)** related with the creation of a **event management model** (event driven) to develop the different parts in a homogeneous way
 
-Esta librería destaca por :
+This library stands out for:
 
-* Proporcionar **clases de constantes**
-* Proporcionar una **clase genérica de evento**
-* Proporcionar una **tipología genérica de evento** 
-* Proporcionar **clases de utilidad** : factory, validadores, etc. 
-* Proporcionar una **excepción generica** "EventDrivenException" para disponer de un tipo de excepción diferenciadora en el proyecto (el resto de excepciones deberían de heredar de ella)
-Nota : Esta excepción hereda de la excepción global de arquitectura
+* Provides **constants classes**
+* Provides a **generic event model**
+* Provides a **generic event typology**
+* Provides **utility classes** : factory, validators, converters, etc.
+* Provides a **generic event exception** "EventDrivenException" to have a differentiating exception type in the project (the rest of exceptions should inherit from it).
+Note : This exception inherits the global exception of architecture.
 
-## Stack Tecnológico
+## Technological Stack
 
 * Java 8
-* [Maven 3](https://maven.apache.org/) - Gestión de dependencias
+* [Maven 3](https://maven.apache.org/) - Dependency Management
 
-Dependencias con proyectos de arquitectura
+Dependencies with architecture projects
 
-* **architecture-testing** [1.0.0-SNAPSHOT] : Librería de arquitectura para testing utilizada en el ámbito de test
-* **architecture-common** [1.0.0-SNAPSHOT] : Librería de arquitectura para proporcionar los elementos globales a los proyectos
+* **architecture-testing** [1.0.0-SNAPSHOT] : Architecture library for testing used in the test environment
+* **architecture-common** [1.0.0-SNAPSHOT] : Architecture library to provide global elements to projects
 
+Third Party Dependencies
 
+Those provided by the architecture libraries
 
-Dependencias terceros
+## Prerequisites
 
-Las proporcionadas por las librerías de arquitectura
+Define what elements are needed to install the software
 
-
-## Prerrequisitos
-
-Se definen que elementos se necesitan para instalar el software
-
-* Tener instalado Java 8 (Se requiere versión 1.5+)
-* Tener instalado Maven (Se aconseja que sea 3+)
+* Java 8 installed (1.5+ version required)
+* Maven installed  (3+)
 
 
-### Instalación
+## Installation
 
-Pasos a seguir 
+Steps to follow
 
-* Arrancar la consola
-* Situarse en el PATH de instalación (el lugar donde se encuentra el proyecto)
-* Verificar que se encuentra disponible el fichero "pom.xml"
+* Start a terminal
+* To be located in the PATH of installation (the place where the project is located)
+* Verify that the file "pom.xml" is available
 
-Ejecutar el siguiente comando
+Execute the following command
 
 ```bash
 mvn clean install
 ```
 
-El resultado será la generación de un artefacto en tu repositorio maven
+The result will be the generation of an artifact in your maven repository
 
 
 ## Testing
 
-Este proyecto dispone de test
+This project has tests
 
-Nota : utilizar todos los comandos de maven
+## Deploy
 
-## Despliegue
+Custom Library
 
-No aplica
+## Versioning
 
+**Note :** [SemVer](http://semver.org/) is used for the versioning. 
+To see the available versions access the repository tags
 
-## Versionado
-
-**Nota :** Se utiliza [SemVer](http://semver.org/) para el versionado. 
-Para ver las versiones disponibles acceder a los tags del repositorio
-
-## Autores
+## Authors
 
 * **Víctor Madrid**

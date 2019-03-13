@@ -1,71 +1,66 @@
 # architecture-web-jsf
 
-Este proyecto representa a una **librería de arquitectura** relacionada con la impementación de la capa web en base a **JSF** para desarrollar las diferentes partes de forma homogenea
+This project represents a **architecture library (dependency)** related with the impementation of the **web with JSF** layer to develop the different parts in a homogeneous way
 
-Esta librería destaca por :
+This library stands out for:
 
-* Definir los **frameworks web / jsf** y su versionado
+* Define the **web / jsf frameworks** and their versioning
 
 
 ## Stack Tecnológico
 
+## Technological Stack
+
 * Java 8
-* [Maven 3](https://maven.apache.org/) - Gestión de dependencias
+* [Maven 3](https://maven.apache.org/) - Dependency Management
 
-Dependencias con proyectos de arquitectura
+Dependencies with architecture projects
 
-* **architecture-testing** [1.0.0-SNAPSHOT] : Librería de arquitectura para testing utilizada en el ámbito de test
-* **architecture-web** [1.0.0-SNAPSHOT] : Librería de arquitectura para la generación de aplicaciones web
+* **architecture-testing** [1.0.0-SNAPSHOT] : Architecture library for testing used in the test environment
+* **architecture-web** [1.0.0-SNAPSHOT] : Architectural library for web application generation
 
-Dependencias terceros
+Third Party Dependencies
 
-* **jsf-api** [2.2.15] : Facilita el uso de JSF
-* **primefaces** [6.1] : Framework impementación de JSF
-* **primefaces-extensions** [6.1] : Extensiones para el framework Primefaces
+* **jsf-api** [2.2.15] : Facilitates the use of JSF
+* **primefaces** [6.1] : JSF Impementation Framework
+* **primefaces-extensions** [6.1] : Extensions for the Primefaces framework
 
+## Prerequisites
 
-## Prerrequisitos
+Define what elements are needed to install the software
 
-Se definen que elementos se necesitan para instalar el software
+* Java 8 installed (1.5+ version required)
+* Maven installed  (3+)
 
-* Tener instalado Java 8 (Se requiere versión 1.5+)
-* Tener instalado Maven (Se aconseja que sea 3+)
+## Installation
 
+Steps to follow
 
-### Instalación
+* Start a terminal
+* To be located in the PATH of installation (the place where the project is located)
+* Verify that the file "pom.xml" is available
 
-Pasos a seguir 
-
-* Arrancar la consola
-* Situarse en el PATH de instalación (el lugar donde se encuentra el proyecto)
-* Verificar que se encuentra disponible el fichero "pom.xml"
-
-Ejecutar el siguiente comando
+Execute the following command
 
 ```bash
 mvn clean install
 ```
 
-El resultado será la generación de un artefacto en tu repositorio maven
-
+The result will be the generation of an artifact in your maven repository
 
 ## Testing
 
-Este proyecto dispone de test
+This project has tests
 
-Nota : utilizar todos los comandos de maven
+## Deploy
 
+Custom Library
 
-## Despliegue
+## Versioning
 
-No aplica
+**Note :** [SemVer](http://semver.org/) is used for the versioning. 
+To see the available versions access the repository tags
 
-
-## Versionado
-
-**Nota :** Se utiliza [SemVer](http://semver.org/) para el versionado. 
-Para ver las versiones disponibles acceder a los tags del repositorio
-
-## Autores
+## Authors
 
 * **Víctor Madrid**

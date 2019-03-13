@@ -1,70 +1,70 @@
 # architecture-persistence
 
-Este proyecto representa a una **librería de arquitectura** relacionada con la **persistencia** para desarrollar las diferentes partes de forma homogenea
+This project represents a **architecture library (dependency)** related with **persistence** to develop the different parts in a homogeneous way
 
-Esta librería destaca por :
+This library stands out for:
 
-* Proporciona una propuesta de **interfaz genérica** para implementar **repositorios**
-* Proporciona una propuesta de **implementación** de la **interfaz genérica** para su **uso en memoria** (List y Map)
-* Proporciona **clases de utilidades** para facilitar los desarrollos sobre persistencia
-* Definir los **frameworks de persistencia** y su versionado
+* Provides  a proposal of generic interface** to implement **repositories**
+* Provides a proposal for **implementation** of the **generic interface** for **in-memory use** (List and Map)
+* Provides **utility classes** to facilitate developments on persistence
+* Define the **persistence frameworks** and their versioning
 
 
-## Stack Tecnológico
+## Technological Stack
 
 * Java 8
-* [Maven 3](https://maven.apache.org/) - Gestión de dependencias
+* [Maven 3](https://maven.apache.org/) - Dependency Management
 
-Dependencias con proyectos de arquitectura
+Dependencies with architecture projects
 
-* **architecture-testing** [1.0.0-SNAPSHOT] : Librería de arquitectura para testing utilizada en el ámbito de test
+* **architecture-testing** [1.0.0-SNAPSHOT] : Architecture library for testing used in the test environment
 
-Dependencias terceros
+Third Party Dependencies
 
-* **h2** [1.4.196] : Framework de base de datos en memoria
-* **liquibase** [1.10.19] : Framework para gestión de cambios en la base de datos
-
-
-## Prerrequisitos
-
-Se definen que elementos se necesitan para instalar el software
-
-* Tener instalado Java 8 (Se requiere versión 1.5+)
-* Tener instalado Maven (Se aconseja que sea 3+)
+* **h2** [1.4.196] : In-memory database framework
+* **liquibase** [1.10.19] : Database change management framework
 
 
-### Instalación
+## Prerequisites
 
-Pasos a seguir 
+Define what elements are needed to install the software
 
-* Arrancar la consola
-* Situarse en el PATH de instalación (el lugar donde se encuentra el proyecto)
-* Verificar que se encuentra disponible el fichero "pom.xml"
+* Java 8 installed (1.5+ version required)
+* Maven installed  (3+)
 
-Ejecutar el siguiente comando
+
+## Installation
+
+Steps to follow
+
+* Start a terminal
+* To be located in the PATH of installation (the place where the project is located)
+* Verify that the file "pom.xml" is available
+
+Execute the following command
 
 ```bash
 mvn clean install
 ```
 
-El resultado será la generación de un artefacto en tu repositorio maven
+The result will be the generation of an artifact in your maven repository
 
 
 ## Testing
 
-Este proyecto NO dispone de test
+This project does NOT have a test
 
 
-## Despliegue
+## Deploy
 
-No aplica
+N/A
 
 
-## Versionado
+## Versioning
 
-**Nota :** Se utiliza [SemVer](http://semver.org/) para el versionado. 
-Para ver las versiones disponibles acceder a los tags del repositorio
+**Note :** [SemVer](http://semver.org/) is used for the versioning. 
+To see the available versions access the repository tags
 
-## Autores
+## Authors
 
 * **Víctor Madrid**

@@ -1,76 +1,75 @@
 # architecture-common
 
-Este proyecto representa a una **librería de arquitectura** relacionada con **elementos comunes a cualquier proyecto** para desarrollar las diferentes partes de forma homogenea
+This project represents a **architecture library (dependency)** related with **elements common to any project** to develop the different parts in a homogeneous way
 
-Esta librería destaca por :
+This library stands out for:
 
-* Proporcionar **clases de constantes globales**
-* Proporcionar **clases de utilidades** que facilitarán el trabajo con diferentes elementos : conversores, transformadores, etc.
-* Proporcionar una **excepción generica** "AcmeException" para disponer de un tipo de excepción diferenciadora en el proyecto (el resto de excepciones deberían de heredar de ella)
-* Proporciona un **componente abstracto de generación de entidades o modelos** 
+* Provides  **global contant classes**
+* Provides **utility classes** to facilitaty testing with certain elements : converters, transformers, etc.
+* Provides a **generic exception** "AcmeException" (Main Business Exception) to have a differentiating type of exception in the project (the rest of exceptions should inherit from it)
+* Provides  an **abstract component for generating entities or models** 
+* Define **common frameworks** and their versioning (Help to define an architecture)
 
-
-## Stack Tecnológico
+## Technological Stack
 
 * Java 8
-* [Maven 3](https://maven.apache.org/) - Gestión de dependencias
+* [Maven 3](https://maven.apache.org/) - Dependency Management
 
-Dependencias con proyectos de arquitectura
+Dependencies with architecture projects
 
-* **architecture-testing** [1.0.0-SNAPSHOT] : Librería de arquitectura para testing utilizada en el ámbito de test
+* **architecture-testing** [1.0.0-SNAPSHOT] : Architecture library for testing used in the test environment
 
-Dependencias terceros
+Third Party Dependencies
 
-* **commons-lang3** [3.8.1] : Framework de utilidades para las clases
-* **commons-collections4** [4.3] : Framework de utilidades para trabajar con colecciones
-* **jackson-databind** [2.9.8] : Librería para trabajar con Jackson
-* **jackson-datatype-jsr310** [2.9.8] : Librería para dar soporte JSR-310 (Java 8 Date & Time API) data types
-* **slf4j-api** [1.7.25] : Framework para la definición de loggin
-* **log4j-over-slf4j** [1.10.19] : Implementación de log4j
-* **logback** [1.2.3] : Framework de logging
+* **commons-lang3** [3.8.1] : Utilities framework for classes
+* **commons-collections4** [4.3] : Framework of utilities to work with collections
+* **jackson-databind** [2.9.8] : Bookstore to work with Jackson
+* **jackson-datatype-jsr310** [2.9.8] : Library to support JSR-310 (Java 8 Date & Time API) data types
+* **slf4j-api** [1.7.25] : Framework for loggin definition
+* **log4j-over-slf4j** [1.10.19] : Implementation of log4j
+* **logback** [1.2.3] : Logging Framework
+
+## Prerequisites
+
+Define what elements are needed to install the software
+
+* Java 8 installed (1.5+ version required)
+* Maven installed  (3+)
 
 
-## Prerrequisitos
+## Installation
 
-Se definen que elementos se necesitan para instalar el software
+Steps to follow
 
-* Tener instalado Java 8 (Se requiere versión 1.5+)
-* Tener instalado Maven (Se aconseja que sea 3+)
+* Start a terminal
+* To be located in the PATH of installation (the place where the project is located)
+* Verify that the file "pom.xml" is available
 
-
-### Instalación
-
-Pasos a seguir 
-
-* Arrancar la consola
-* Situarse en el PATH de instalación (el lugar donde se encuentra el proyecto)
-* Verificar que se encuentra disponible el fichero "pom.xml"
-
-Ejecutar el siguiente comando
+Execute the following command
 
 ```bash
 mvn clean install
 ```
 
-El resultado será la generación de un artefacto en tu repositorio maven
+The result will be the generation of an artifact in your maven repository
 
 
 ## Testing
 
-Este proyecto dispone de test
+Este proyecto dispone de test -> Unitary test
 
 Nota : utilizar todos los comandos de maven
 
-## Despliegue
+## Deploy
 
-No aplica
+Custom Library
 
 
-## Versionado
+## Versioning
 
-**Nota :** Se utiliza [SemVer](http://semver.org/) para el versionado. 
-Para ver las versiones disponibles acceder a los tags del repositorio
+**Note :** [SemVer](http://semver.org/) is used for the versioning. 
+To see the available versions access the repository tags
 
-## Autores
+## Authors
 
 * **Víctor Madrid**

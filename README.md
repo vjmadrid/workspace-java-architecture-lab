@@ -1,38 +1,36 @@
 # workspace-java-architecture-lab
 
-Este workspace es un repositorio de **librerías de arquitectura**
+This workspace is a repository of **architecture libraries for Java**
 
-## Stack Tecnológico
+## Technological Stack
 
 * Java 8
-* [Maven 3](https://maven.apache.org/) - Gestión de dependencias
+* [Maven 3](https://maven.apache.org/) - Dependency Management
 
+## Prerequisites
 
-## Prerrequisitos
+Define what elements are needed to install the software
 
-Se definen que elementos se necesitan para instalar el software
+* Java 8 installed (1.5+ version required)
+* Maven installed  (3+)
 
-* Tener instalado Java 8 (Se requiere versión 1.5+)
-* Tener instalado Maven (Se aconseja que sea 3+)
+### Installation
 
-### Instalación
-
-Cada proyecto tiene su forma
+Each project/library has its form
 
 ## Testing
 
-Cada proyecto tiene su forma
+Each project/library has its form
 
-## Despliegue
+## Deploy
 
-No aplica
+Custom Library
 
+## Versioning
 
-## Versionado
+**Note :** [SemVer](http://semver.org/) is used for the versioning. 
+To see the available versions access the repository tags
 
-**Nota :** Se utiliza [SemVer](http://semver.org/) para el versionado. 
-Para ver las versiones disponibles acceder a los tags del repositorio
-
-## Autores
+## Authors
 
 * **Víctor Madrid**

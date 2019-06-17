@@ -4,7 +4,7 @@ This project represents a **architecture library (dependency)** related with **e
 
 This library stands out for:
 
-* Provides  **global contant classes**
+* Provides **global contant classes**
 * Provides **utility classes** to facilitaty testing with certain elements : converters, transformers, etc.
 * Provides a **generic exception** "AcmeException" (Main Business Exception) to have a differentiating type of exception in the project (the rest of exceptions should inherit from it)
 * Provides  an **abstract component for generating entities or models** 

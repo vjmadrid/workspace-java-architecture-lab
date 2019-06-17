@@ -11,8 +11,8 @@ import org.junit.Before;
 import org.junit.Test;
 
 import com.acme.architecture.event.driven.entity.GenericEvent;
-import com.acme.architecture.event.driven.factory.JUnitTestBuilder;
 import com.acme.architecture.event.driven.factory.dummy.DummyGenericEventDataFactory;
+import com.acme.architecture.testing.util.JUnitTestBuilder;
 import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 

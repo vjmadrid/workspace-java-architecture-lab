@@ -1,6 +1,6 @@
 package com.acme.architecture.common.exception;
 
-import com.acme.architecture.event.driven.entity.AbstractExceptionTest;
+import com.acme.architecture.testing.exception.test.AbstractExceptionTest;
 
 
 public class AcmeExceptionTest extends AbstractExceptionTest {

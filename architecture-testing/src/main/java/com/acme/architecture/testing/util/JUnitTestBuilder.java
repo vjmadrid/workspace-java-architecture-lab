@@ -1,4 +1,4 @@
-package com.acme.architecture.event.driven.factory;
+package com.acme.architecture.testing.util;
 
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;

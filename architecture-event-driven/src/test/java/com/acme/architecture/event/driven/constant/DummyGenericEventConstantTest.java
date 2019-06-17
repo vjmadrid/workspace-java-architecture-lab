@@ -4,7 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import org.junit.Test;
 
-import com.acme.architecture.event.driven.factory.JUnitTestBuilder;
+import com.acme.architecture.testing.util.JUnitTestBuilder;
 
 public class DummyGenericEventConstantTest {
 

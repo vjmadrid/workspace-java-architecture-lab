@@ -15,13 +15,13 @@ This library stands out for:
 
 Dependencies with architecture projects
 
-* **architecture-testing** [1.0.0-SNAPSHOT] : Architecture library for testing used in the test environment
-* **architecture-persistence** [1.0.0-SNAPSHOT] : Architectural library for persistence
+* **architecture-testing** [0.0.1-SNAPSHOT] : Architecture library for testing used in the test environment
+* **architecture-persistence** [0.0.1-SNAPSHOT] : Architectural library for persistence
 
 Third Party Dependencies
 
-* **mybatis** [3.5.0] : Persitence Framework
-* **mybatis-spring** [1.3.2] : MyBatis-Spring integrator 
+* **mybatis** [3.5.3] : Persitence Framework
+* **mybatis-spring** [1.3.3] : MyBatis-Spring integrator 
 
 
 ## Prerequisites
@@ -46,23 +46,29 @@ Execute the following command
 mvn clean install
 ```
 
-The result will be the generation of an artifact in your maven repository
+The result will be the generation of an artifact in your Maven repository (local)
 
 
 ## Testing
 
-This project does NOT have a test
+N/A
 
 
 ## Deploy
 
-N/A
+Custom Library
+
+
+## Use
+
+Custom Library
 
 
 ## Versioning
 
 **Note :** [SemVer](http://semver.org/) is used for the versioning. 
 To see the available versions access the repository tags
+
 
 ## Authors
 

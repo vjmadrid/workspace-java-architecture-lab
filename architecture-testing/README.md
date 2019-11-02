@@ -13,10 +13,14 @@ This library stands out for:
 * Java 8
 * [Maven 3](https://maven.apache.org/) - Dependency Management
 
-Dependencies 
+Dependencies with architecture projects
 
-* **hamcrest** [1.3] : Matching / asserts framework
-* **assertj-core** [3.12.0] : Matching / asserts framework
+N/A
+
+Third Party Dependencies
+
+* **hamcrest** [2.2] : Matching / asserts framework
+* **assertj-core** [3.13.2] : Matching / asserts framework
 * **mockito** [1.10.19] : Mocking framework
 * **junit** [4.12] : Unity test framework
 
@@ -43,16 +47,23 @@ Execute the following command
 mvn clean install
 ```
 
-The result will be the generation of an artifact in your maven repository
+The result will be the generation of an artifact in your Maven repository (local)
 
 
 ## Testing
 
-No use test
+N/A
+
 
 ## Deploy
 
 Custom Library
+
+
+## Use
+
+Custom Library
+
 
 ## Versioning
 

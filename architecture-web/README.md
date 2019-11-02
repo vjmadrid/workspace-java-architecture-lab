@@ -17,7 +17,7 @@ This library stands out for:
 
 Dependencies with architecture projects
 
-* **architecture-testing** [1.0.0-SNAPSHOT] : Architecture library for testing used in the test environment
+* **architecture-testing** [0.0.1-SNAPSHOT] : Architecture library for testing used in the test environment
 
 Third Party Dependencies
 
@@ -26,7 +26,7 @@ Third Party Dependencies
 * **jstl** [1.2] : Facilitates the use of JSTL
 * **taglibs** [1.1.2] : Facilitates the use of JSTL
 * **jsf-api** [2.2.15] : Facilitates the use of JSF
-* **jackson** [2.9.8] : Facilitates JSON implementation
+
 
 
 ## Prerequisites
@@ -51,16 +51,25 @@ Execute the following command
 mvn clean install
 ```
 
-The result will be the generation of an artifact in your maven repository
+The result will be the generation of an artifact in your Maven repository (local)
 
 
 ## Testing
 
-This project has tests
+This project has tests : Unit + Integration
+
+Execute with IDE or Maven
+
 
 ## Deploy
 
 Custom Library
+
+
+## Use
+
+Custom Library
+
 
 ## Versioning
 

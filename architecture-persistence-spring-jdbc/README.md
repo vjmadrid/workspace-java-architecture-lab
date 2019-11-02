@@ -16,14 +16,14 @@ This library stands out for:
 
 Dependencies with architecture projects
 
-* **architecture-testing** [1.0.0-SNAPSHOT] : Architecture library for testing used in the test environment
-* **architecture-persistence** [1.0.0-SNAPSHOT] : Architectural library for persistence
+* **architecture-testing** [0.0.1-SNAPSHOT] : Architecture library for testing used in the test environment
+* **architecture-persistence** [0.0.1-SNAPSHOT] : Architectural library for persistence
 
 Third Party Dependencies
 
 * **spring-jdbc** [4.2.0.RELEASE] : Implementation of Spring for JDBC (Imposes transitivity libraries)
-* **commons-dbcp2** [2.6.0] : Framework to get connection Pooling
-* **c3p0** [1.10.19] : Framework to get connection Pooling and Statement cache
+* **commons-dbcp2** [2.7.0] : Framework to get connection Pooling
+* **c3p0** [0.9.5.4] : Framework to get connection Pooling and Statement cache
 
 
 ## Prerequisites
@@ -48,17 +48,22 @@ Execute the following command
 mvn clean install
 ```
 
-The result will be the generation of an artifact in your maven repository
+The result will be the generation of an artifact in your Maven repository (local)
 
 
 ## Testing
 
-This project does NOT have a test
+N/A
 
 
 ## Deploy
 
-N/A
+Custom Library
+
+
+## Use
+
+Custom Library
 
 
 ## Versioning

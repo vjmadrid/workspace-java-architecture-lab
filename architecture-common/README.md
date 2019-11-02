@@ -10,6 +10,7 @@ This library stands out for:
 * Provides  an **abstract component for generating entities or models** 
 * Define **common frameworks** and their versioning (Help to define an architecture)
 
+
 ## Technological Stack
 
 * Java 8
@@ -17,17 +18,18 @@ This library stands out for:
 
 Dependencies with architecture projects
 
-* **architecture-testing** [1.0.0-SNAPSHOT] : Architecture library for testing used in the test environment
+* **architecture-testing** [0.0.1-SNAPSHOT] : Architecture library for testing used in the test environment
 
 Third Party Dependencies
 
-* **commons-lang3** [3.8.1] : Utilities framework for classes
-* **commons-collections4** [4.3] : Framework of utilities to work with collections
-* **jackson-databind** [2.9.8] : Bookstore to work with Jackson
-* **jackson-datatype-jsr310** [2.9.8] : Library to support JSR-310 (Java 8 Date & Time API) data types
+* **commons-lang3** [3.9] : Utilities framework for classes
+* **commons-collections4** [4.4] : Framework of utilities to work with collections
+* **jackson-databind** [2.10.0] : Bookstore to work with Jackson
+* **jackson-datatype-jsr310** [2.10.0] : Library to support JSR-310 (Java 8 Date & Time API) data types
 * **slf4j-api** [1.7.25] : Framework for loggin definition
-* **log4j-over-slf4j** [1.10.19] : Implementation of log4j
+* **log4j-over-slf4j** [1.7.25] : Implementation of log4j
 * **logback** [1.2.3] : Logging Framework
+
 
 ## Prerequisites
 
@@ -51,16 +53,22 @@ Execute the following command
 mvn clean install
 ```
 
-The result will be the generation of an artifact in your maven repository
+The result will be the generation of an artifact in your Maven repository (local)
 
 
 ## Testing
 
-Este proyecto dispone de test -> Unitary test
+This project has tests : Unit + Integration
 
-Nota : utilizar todos los comandos de maven
+Execute with IDE or Maven
+
 
 ## Deploy
+
+Custom Library
+
+
+## Use
 
 Custom Library
 
@@ -69,6 +77,7 @@ Custom Library
 
 **Note :** [SemVer](http://semver.org/) is used for the versioning. 
 To see the available versions access the repository tags
+
 
 ## Authors
 

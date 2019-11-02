@@ -15,12 +15,13 @@ This library stands out for:
 
 Dependencies with architecture projects
 
-* **architecture-testing** [1.0.0-SNAPSHOT] : Architecture library for testing used in the test environment
-* **architecture-persistence** [1.0.0-SNAPSHOT] : Architectural library for persistence
+* **architecture-testing** [0.0.1-SNAPSHOT] : Architecture library for testing used in the test environment
+* **architecture-persistence** [0.0.1-SNAPSHOT] : Architectural library for persistence
 
 Third Party Dependencies
 
-* **hibernate** [5.4.1.Final] : Persitence Framework
+* **hibernate** [5.4.1.Final] : Persistence Framework
+* **liquibase-hibernate5** [3.6] : Liquidbase Integrator 
 
 
 ## Prerequisites
@@ -29,6 +30,7 @@ Define what elements are needed to install the software
 
 * Java 8 installed (1.5+ version required)
 * Maven installed  (3+)
+
 
 ## Installation
 
@@ -44,7 +46,7 @@ Execute the following command
 mvn clean install
 ```
 
-The result will be the generation of an artifact in your maven repository
+The result will be the generation of an artifact in your Maven repository (local)
 
 ## Testing
 
@@ -53,13 +55,19 @@ This project does NOT have a test
 
 ## Deploy
 
-N/A
+Custom Library
+
+
+## Use
+
+Custom Library
 
 
 ## Versioning
 
 **Note :** [SemVer](http://semver.org/) is used for the versioning. 
 To see the available versions access the repository tags
+
 
 ## Authors
 

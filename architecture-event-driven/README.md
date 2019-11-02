@@ -9,7 +9,9 @@ This library stands out for:
 * Provides a **generic event typology**
 * Provides **utility classes** : factory, validators, converters, etc.
 * Provides a **generic event exception** "EventDrivenException" to have a differentiating exception type in the project (the rest of exceptions should inherit from it).
+
 Note : This exception inherits the global exception of architecture.
+
 
 ## Technological Stack
 
@@ -18,12 +20,13 @@ Note : This exception inherits the global exception of architecture.
 
 Dependencies with architecture projects
 
-* **architecture-testing** [1.0.0-SNAPSHOT] : Architecture library for testing used in the test environment
-* **architecture-common** [1.0.0-SNAPSHOT] : Architecture library to provide global elements to projects
+* **architecture-testing** [0.0.1-SNAPSHOT] : Architecture library for testing used in the test environment
+* **architecture-common** [0.0.1-SNAPSHOT] : Architecture library to provide global elements to projects
 
 Third Party Dependencies
 
-Those provided by the architecture libraries
+* Those provided by the architecture libraries
+
 
 ## Prerequisites
 
@@ -47,21 +50,31 @@ Execute the following command
 mvn clean install
 ```
 
-The result will be the generation of an artifact in your maven repository
+The result will be the generation of an artifact in your Maven repository (local)
 
 
 ## Testing
 
-This project has tests
+This project has tests : Unit 
+
+Execute with IDE or Maven
+
 
 ## Deploy
 
 Custom Library
 
+
+## Use
+
+Custom Library
+
+
 ## Versioning
 
 **Note :** [SemVer](http://semver.org/) is used for the versioning. 
 To see the available versions access the repository tags
+
 
 ## Authors
 

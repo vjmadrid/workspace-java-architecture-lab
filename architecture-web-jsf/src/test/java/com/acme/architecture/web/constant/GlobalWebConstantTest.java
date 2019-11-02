@@ -4,9 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import org.junit.Test;
 
-import com.acme.architecture.web.constant.GlobalWebConstant;
-
-import es.dinersclub.architecture.testing.util.JUnitTestBuilder;
+import com.acme.architecture.testing.util.JUnitTestBuilder;
 
 public class GlobalWebConstantTest {
 

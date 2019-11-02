@@ -1,6 +1,8 @@
 package com.acme.architecture.event.driven.exception;
 
-public class EventDrivenException extends Exception {
+import com.acme.architecture.common.exception.AcmeException;
+
+public class EventDrivenException extends AcmeException {
 
 	private static final long serialVersionUID = -4102004426627995641L;
 

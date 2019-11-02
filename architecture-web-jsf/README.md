@@ -16,8 +16,8 @@ This library stands out for:
 
 Dependencies with architecture projects
 
-* **architecture-testing** [1.0.0-SNAPSHOT] : Architecture library for testing used in the test environment
-* **architecture-web** [1.0.0-SNAPSHOT] : Architectural library for web application generation
+* **architecture-testing** [0.0.1-SNAPSHOT] : Architecture library for testing used in the test environment
+* **architecture-web** [0.0.1-SNAPSHOT] : Architectural library for web application generation
 
 Third Party Dependencies
 
@@ -25,12 +25,14 @@ Third Party Dependencies
 * **primefaces** [6.1] : JSF Impementation Framework
 * **primefaces-extensions** [6.1] : Extensions for the Primefaces framework
 
+
 ## Prerequisites
 
 Define what elements are needed to install the software
 
 * Java 8 installed (1.5+ version required)
 * Maven installed  (3+)
+
 
 ## Installation
 
@@ -46,20 +48,29 @@ Execute the following command
 mvn clean install
 ```
 
-The result will be the generation of an artifact in your maven repository
+The result will be the generation of an artifact in your Maven repository (local)
+
 
 ## Testing
 
-This project has tests
+N/A
+
 
 ## Deploy
 
 Custom Library
 
+
+## Use
+
+Custom Library
+
+
 ## Versioning
 
 **Note :** [SemVer](http://semver.org/) is used for the versioning. 
 To see the available versions access the repository tags
+
 
 ## Authors
 

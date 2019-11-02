@@ -4,7 +4,7 @@
 
 	<groupId>com.acme.architecture.persistence</groupId>
 	<artifactId>architecture-persistence</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>architecture-persistence</name>
@@ -26,7 +26,7 @@
 		<dependency>
 			<groupId>com.acme.architecture.testing</groupId>
 			<artifactId>architecture-testing</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
+			<version>0.0.1-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
 
@@ -43,7 +43,7 @@
 		<dependency>
 			<groupId>org.liquibase</groupId>
 			<artifactId>liquibase-core</artifactId>
-			<version>3.6.3</version>
+			<version>3.8.0</version>
 		</dependency>
 
 	</dependencies>

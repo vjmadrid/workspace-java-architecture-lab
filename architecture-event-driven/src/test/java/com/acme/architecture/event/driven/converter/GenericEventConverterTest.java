@@ -51,7 +51,7 @@ public class GenericEventConverterTest {
 	}
 	
 	
-	@Test (expected=NullPointerException.class)
+	@Test (expected=IllegalArgumentException.class)
 	public void shouldFromJSONToObjectWithNull() throws JsonParseException, JsonMappingException, IOException {
 		GenericEventConverter.INSTANCE.fromJSONToObject(null);
 	}

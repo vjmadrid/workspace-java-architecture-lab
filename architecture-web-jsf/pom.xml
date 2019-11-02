@@ -4,7 +4,7 @@
 
 	<groupId>com.acme.architecture.web</groupId>
 	<artifactId>architecture-web-jsf</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>architecture-web-jsf</name>
@@ -29,7 +29,7 @@
 
 		<!-- Modules -->
 		<dependency>
-			<groupId>es.dinersclub.architecture.testing</groupId>
+			<groupId>com.acme.architecture.testing</groupId>
 			<artifactId>architecture-testing</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>test</scope>
@@ -38,7 +38,7 @@
 		<dependency>
 			<groupId>com.acme.architecture.web</groupId>
 			<artifactId>architecture-web</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
 
 		<!-- *** Third Party Libraries *** -->

@@ -4,7 +4,7 @@
 
 	<groupId>com.acme.architecture.persistence.spring.jdbc</groupId>
 	<artifactId>architecture-persistence-spring-jdbc</artifactId>
-	<version>1.0.0-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>architecture-persistence-spring-jdbc</name>
@@ -29,14 +29,14 @@
 		<dependency>
 			<groupId>com.acme.architecture.testing</groupId>
 			<artifactId>architecture-testing</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
+			<version>0.0.1-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
 		
 		<dependency>
 			<groupId>com.acme.architecture.persistence</groupId>
 			<artifactId>architecture-persistence</artifactId>
-			<version>1.0.0-SNAPSHOT</version>
+			<version>0.0.1-SNAPSHOT</version>
  		</dependency>
  		
  		<!-- *** Third Party Libraries *** -->
@@ -52,14 +52,14 @@
 		<dependency>
 			<groupId>com.mchange</groupId>
 			<artifactId>c3p0</artifactId>
-			<version>0.9.5.1</version>
+			<version>0.9.5.4</version>
 		</dependency>
 		
 		<!-- commons-dbcp2 : Database Connection Pooling -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-dbcp2</artifactId>
-			<version>2.6.0</version>
+			<version>2.7.0</version>
 		</dependency>
 		
 	</dependencies>	

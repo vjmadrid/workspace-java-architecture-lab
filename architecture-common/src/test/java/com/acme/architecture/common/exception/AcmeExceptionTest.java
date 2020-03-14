@@ -1,9 +1,9 @@
 package com.acme.architecture.common.exception;
 
-import com.acme.architecture.testing.exception.test.AbstractExceptionTest;
+import com.acme.architecture.testing.util.AbstractExceptionTestUtil;
 
 
-public class AcmeExceptionTest extends AbstractExceptionTest {
+public class AcmeExceptionTest extends AbstractExceptionTestUtil {
 
 	@Override
 	protected Exception getExceptionWithParameter() {

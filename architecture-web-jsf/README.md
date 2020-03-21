@@ -7,7 +7,6 @@ This library stands out for:
 * Define the **web / jsf frameworks** and their versioning
 
 
-## Stack Tecnológico
 
 ## Technological Stack
 
@@ -34,6 +33,9 @@ Define what elements are needed to install the software
 * Maven installed  (3+)
 
 
+
+
+
 ## Installation
 
 Steps to follow
@@ -56,9 +58,15 @@ The result will be the generation of an artifact in your Maven repository (local
 N/A
 
 
+
+
+
 ## Deploy
 
 Custom Library
+
+
+
 
 
 ## Use
@@ -66,10 +74,16 @@ Custom Library
 Custom Library
 
 
+
+
+
 ## Versioning
 
 **Note :** [SemVer](http://semver.org/) is used for the versioning. 
 To see the available versions access the repository tags
+
+
+
 
 
 ## Authors

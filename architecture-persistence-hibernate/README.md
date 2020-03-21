@@ -8,6 +8,9 @@ This library stands out for:
 * Define the **Hibernate framework** and their versioning
 
 
+
+
+
 ## Technological Stack
 
 * Java 8
@@ -24,12 +27,18 @@ Third Party Dependencies
 * **liquibase-hibernate5** [3.6] : Liquidbase Integrator 
 
 
+
+
+
 ## Prerequisites
 
 Define what elements are needed to install the software
 
 * Java 8 installed (1.5+ version required)
 * Maven installed  (3+)
+
+
+
 
 
 ## Installation
@@ -48,9 +57,16 @@ mvn clean install
 
 The result will be the generation of an artifact in your Maven repository (local)
 
+
+
+
+
 ## Testing
 
-This project does NOT have a test
+N/A
+
+
+
 
 
 ## Deploy
@@ -58,15 +74,24 @@ This project does NOT have a test
 Custom Library
 
 
+
+
+
 ## Use
 
 Custom Library
+
+
+
 
 
 ## Versioning
 
 **Note :** [SemVer](http://semver.org/) is used for the versioning. 
 To see the available versions access the repository tags
+
+
+
 
 
 ## Authors

@@ -30,7 +30,6 @@
 
 		<!-- *** Architecture Libraries *** -->
 
-		<!-- Modules -->
 		<dependency>
 			<groupId>com.acme.architecture.testing</groupId>
 			<artifactId>architecture-testing</artifactId>

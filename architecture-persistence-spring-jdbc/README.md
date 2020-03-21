@@ -2,11 +2,13 @@
 
 This project represents a **architecture library (dependency)** related with **persistence with Spring JDBC** to develop the different parts in a homogeneous way
 
-
 This library stands out for:
 
 * Provides a proposal for **implementation** of the **generic interface** for **Spring JDBC**.
 * Define the **Hibernate framework** and their versioning
+
+
+
 
 
 ## Technological Stack
@@ -21,9 +23,12 @@ Dependencies with architecture projects
 
 Third Party Dependencies
 
-* **spring-jdbc** [4.2.0.RELEASE] : Implementation of Spring for JDBC (Imposes transitivity libraries)
+* **spring-jdbc** [5.2.0.RELEASE] : Implementation of Spring for JDBC (Imposes transitivity libraries)
 * **commons-dbcp2** [2.7.0] : Framework to get connection Pooling
-* **c3p0** [0.9.5.4] : Framework to get connection Pooling and Statement cache
+* **c3p0** [0.9.5.5] : Framework to get connection Pooling and Statement cache
+
+
+
 
 
 ## Prerequisites
@@ -32,6 +37,9 @@ Define what elements are needed to install the software
 
 * Java 8 installed (1.5+ version required)
 * Maven installed  (3+)
+
+
+
 
 
 ## Installation
@@ -51,9 +59,15 @@ mvn clean install
 The result will be the generation of an artifact in your Maven repository (local)
 
 
+
+
+
 ## Testing
 
 N/A
+
+
+
 
 
 ## Deploy
@@ -61,15 +75,25 @@ N/A
 Custom Library
 
 
+
+
+
 ## Use
 
 Custom Library
+
+
+
 
 
 ## Versioning
 
 **Note :** [SemVer](http://semver.org/) is used for the versioning. 
 To see the available versions access the repository tags
+
+
+
+
 
 ## Authors
 

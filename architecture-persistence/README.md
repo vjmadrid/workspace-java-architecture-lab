@@ -7,7 +7,10 @@ This library stands out for:
 * Provides  a proposal of generic interface** to implement **repositories**
 * Provides a proposal for **implementation** of the **generic interface** for **in-memory use** (List and Map)
 * Provides **utility classes** to facilitate developments on persistence
-* Define the **persistence frameworks** and their versioning
+* OPTIONAL : Define the **persistence frameworks** and their versioning
+
+
+
 
 
 ## Technological Stack
@@ -21,8 +24,11 @@ Dependencies with architecture projects
 
 Third Party Dependencies
 
-* **h2** [1.4.196] : In-memory database framework
-* **liquibase** [3.8.0] : Database change management framework
+* **h2** [1.4.200] : In-memory database framework
+* **liquibase** [3.8.8] : Database change management framework
+
+
+
 
 
 ## Prerequisites
@@ -31,6 +37,9 @@ Define what elements are needed to install the software
 
 * Java 8 installed (1.5+ version required)
 * Maven installed  (3+)
+
+
+
 
 
 ## Installation
@@ -50,9 +59,15 @@ mvn clean install
 The result will be the generation of an artifact in your Maven repository (local)
 
 
+
+
+
 ## Testing
 
 N/A
+
+
+
 
 
 ## Deploy
@@ -60,15 +75,24 @@ N/A
 Custom Library
 
 
+
+
+
 ## Use
 
 Custom Library
+
+
+
 
 
 ## Versioning
 
 **Note :** [SemVer](http://semver.org/) is used for the versioning. 
 To see the available versions access the repository tags
+
+
+
 
 
 ## Authors

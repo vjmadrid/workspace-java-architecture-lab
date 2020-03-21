@@ -11,36 +11,45 @@
 	<url>http://maven.apache.org</url>
 
 	<properties>
+		<!-- *** Important : Include properties in ~/.m2/settings.xml -->
+
+		<!-- Compiler & Resources -->
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		
-		<spring.version>4.2.0.RELEASE</spring.version>
+		<!-- Dependency Versions -->
+		<spring.version>5.2.0.RELEASE</spring.version>
+		<c3p0.version>0.9.5.5</c3p0.version>
+		<commons-dbcp2.version>2.7.0</commons-dbcp2.version>
 		
-		<maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
+		<!-- Plugins -->
+		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
 		<maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
+		<maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+		<jacoco-maven-plugin.version>0.8.5</jacoco-maven-plugin.version>
 	</properties>
-	
+
+	<!-- <profiles> They are found definitively in in ~/.m2/settings.xml -->
+
 	<dependencies>
-		
+
 		<!-- *** Architecture Libraries *** -->
 
-		<!-- Modules -->
-		
 		<dependency>
 			<groupId>com.acme.architecture.testing</groupId>
 			<artifactId>architecture-testing</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
 			<groupId>com.acme.architecture.persistence</groupId>
 			<artifactId>architecture-persistence</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
- 		</dependency>
- 		
- 		<!-- *** Third Party Libraries *** -->
- 		
+		</dependency>
+
+		<!-- *** Third Party Libraries *** -->
+
  		<!-- spring-jdbc : JDBC implemented Spring -->
  		<dependency>
 			<groupId>org.springframework</groupId>
@@ -52,14 +61,14 @@
 		<dependency>
 			<groupId>com.mchange</groupId>
 			<artifactId>c3p0</artifactId>
-			<version>0.9.5.4</version>
+			<version>${c3p0.version}</version>
 		</dependency>
 		
 		<!-- commons-dbcp2 : Database Connection Pooling -->
 		<dependency>
 			<groupId>org.apache.commons</groupId>
 			<artifactId>commons-dbcp2</artifactId>
-			<version>2.7.0</version>
+			<version>${commons-dbcp2.version}</version>
 		</dependency>
 		
 	</dependencies>	
@@ -68,7 +77,7 @@
 		<finalName>architecture-persistence-spring-jdbc</finalName>
 		<plugins>
 
-			<!-- Plugin used to compile the project source -->
+			<!-- maven-compiler-plugin : Plugin used to compile the project source -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -80,7 +89,7 @@
 				</configuration>
 			</plugin>
 
-			<!-- Plugin used to handle the project resources -->
+			<!-- maven-resources-plugin : Plugin used to handle the project resources -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
@@ -88,6 +97,77 @@
 				<configuration>
 					<encoding>${project.build.sourceEncoding}</encoding>
 				</configuration>
+			</plugin>
+
+			<!-- maven-surefire-plugin : Plugin used to run unit tests - Generate reports in the directory target/surefire-reports -->
+			<plugin>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>${maven-surefire-plugin.version}</version>
+				<configuration>
+					<skipTests>${skip.unit.tests}</skipTests>
+					<testFailureIgnore>true</testFailureIgnore>
+				</configuration>
+			</plugin>
+
+			<!-- jacoco-maven-plugin : Plugin used to generate code coverage -->
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>${jacoco-maven-plugin.version}</version>
+				<executions>
+					<execution>
+						<id>coverage-initialize</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>coverage-report</id>
+						<phase>test</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>target/jacoco-reports</outputDirectory>
+						</configuration>
+					</execution>
+					<execution>
+						<id>coverage-check</id>
+						<goals>
+							<goal>check</goal>
+						</goals>
+						<configuration>
+							<rules>
+								<rule>
+									<element>PACKAGE</element>
+									<limits>
+										<limit>
+											<counter>LINE</counter>
+											<value>COVEREDRATIO</value>
+											<minimum>80%</minimum>
+										</limit>
+									</limits>
+								</rule>
+							</rules>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<!-- maven-deploy-plugin : Plugin used during the deploy phase (use with artifact repository) -->
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.8.2</version>
+				<executions>
+					<execution>
+						<id>default-deploy</id>
+						<phase>deploy</phase>
+						<goals>
+							<goal>deploy</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 
 		</plugins>

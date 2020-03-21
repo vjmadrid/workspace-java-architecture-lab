@@ -8,6 +8,9 @@ This library stands out for:
 * Define the **MyBatis framework** and their versioning
 
 
+
+
+
 ## Technological Stack
 
 * Java 8
@@ -20,8 +23,8 @@ Dependencies with architecture projects
 
 Third Party Dependencies
 
-* **mybatis** [3.5.3] : Persitence Framework
-* **mybatis-spring** [1.3.3] : MyBatis-Spring integrator 
+* **mybatis** [3.5.4] : Persitence Framework
+* **mybatis-spring** [2.0.4] : MyBatis-Spring integrator 
 
 
 ## Prerequisites
@@ -30,6 +33,9 @@ Define what elements are needed to install the software
 
 * Java 8 installed (1.5+ version required)
 * Maven installed  (3+)
+
+
+
 
 
 ## Installation
@@ -49,9 +55,15 @@ mvn clean install
 The result will be the generation of an artifact in your Maven repository (local)
 
 
+
+
+
 ## Testing
 
 N/A
+
+
+
 
 
 ## Deploy
@@ -59,15 +71,24 @@ N/A
 Custom Library
 
 
+
+
+
 ## Use
 
 Custom Library
+
+
+
 
 
 ## Versioning
 
 **Note :** [SemVer](http://semver.org/) is used for the versioning. 
 To see the available versions access the repository tags
+
+
+
 
 
 ## Authors

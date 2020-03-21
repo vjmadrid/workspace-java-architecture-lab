@@ -8,7 +8,7 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import com.acme.architecture.common.entity.example.ExampleCoverageEntitySerializableClass;
-import com.acme.architecture.common.util.AcmeObjectUtil;
+import com.acme.architecture.common.util.ObjectUtil;
 
 public class AbstractEntityTest {
 
@@ -24,8 +24,8 @@ public class AbstractEntityTest {
 	@Test
 	public void whenEntityExtend_thenImplementSerializable() throws Exception {
 
-		byte[] serialized = AcmeObjectUtil.serialize(exampleCoverageEntitySerializableClass);
-		Object deserialized = AcmeObjectUtil.deserialize(serialized);
+		byte[] serialized = ObjectUtil.serialize(exampleCoverageEntitySerializableClass);
+		Object deserialized = ObjectUtil.deserialize(serialized);
 
 		assertTrue(deserialized instanceof ExampleCoverageEntitySerializableClass);
 		assertTrue(exampleCoverageEntitySerializableClass instanceof Serializable);

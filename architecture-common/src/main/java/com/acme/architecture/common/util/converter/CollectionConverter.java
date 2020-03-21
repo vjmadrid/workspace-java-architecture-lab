@@ -7,9 +7,9 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
-public class AcmeCollectionConverter {
+public class CollectionConverter {
 	
-	protected AcmeCollectionConverter() {
+	protected CollectionConverter() {
 		throw new IllegalStateException("AcmeCollectionConverter");
 	}
 

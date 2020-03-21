@@ -1,8 +1,8 @@
 package com.acme.architecture.testing.util.example.clazz.util;
 
-public final class ExampleCoverageUtilInvalidClass {
+public final class ExampleCoverageUtilNoStaticMethodClass {
 
-	private ExampleCoverageUtilInvalidClass() {
+	protected ExampleCoverageUtilNoStaticMethodClass() {
 	}
 	
 	public boolean getValue() {

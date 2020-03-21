@@ -16,7 +16,7 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.config.BeanDefinition;
 import org.springframework.stereotype.Component;
 
-import com.acme.architecture.common.util.converter.AcmeCollectionConverter;
+import com.acme.architecture.common.util.converter.CollectionConverter;
 import com.acme.architecture.core.util.example.ExampleComponentClass;
 import com.acme.architecture.core.util.example.ExampleComponentWithParameterClass;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
@@ -76,7 +76,7 @@ public class AcmeReflectSpringUtilTest {
 		assertNotNull(beanDefinitionSet);
 		assertThat(beanDefinitionSet).hasSize(NUM_CLASS);
 		
-		List<String> beanDefinitionList = AcmeCollectionConverter.toList(beanDefinitionSet).stream().map( bd -> bd.getBeanClassName()).collect(Collectors.toList());
+		List<String> beanDefinitionList = CollectionConverter.toList(beanDefinitionSet).stream().map( bd -> bd.getBeanClassName()).collect(Collectors.toList());
 	
 		assertThat(beanDefinitionList).hasSize(NUM_CLASS);
 		assertThat(beanDefinitionList).contains(BASE_PACKAGE_TEST_VALUE + "." + CLASS_SIMPLE_NAME_VALID, BASE_PACKAGE_TEST_VALUE + "." + CLASS_SIMPLE_NAME_WITH_PARAMETER_VALID);
@@ -105,7 +105,7 @@ public class AcmeReflectSpringUtilTest {
 		assertNotNull(classSet);
 		assertThat(classSet).hasSize(NUM_CLASS);
 		
-		List<String> classList = AcmeCollectionConverter.toList(classSet).stream().map( clazz -> clazz.getSimpleName()).collect(Collectors.toList());
+		List<String> classList = CollectionConverter.toList(classSet).stream().map( clazz -> clazz.getSimpleName()).collect(Collectors.toList());
 		
 		assertThat(classList).hasSize(NUM_CLASS);
 		assertThat(classList).contains(CLASS_SIMPLE_NAME_VALID,CLASS_SIMPLE_NAME_WITH_PARAMETER_VALID);
@@ -135,7 +135,7 @@ public class AcmeReflectSpringUtilTest {
 		assertNotNull(instanceSet);
 		assertThat(instanceSet).hasSize(NUM_CLASS);
 		
-		List<Object> instanceList = AcmeCollectionConverter.toList(instanceSet).stream().filter(instanceClazz -> instanceClazz instanceof ExampleComponentClass).collect(Collectors.toList());
+		List<Object> instanceList = CollectionConverter.toList(instanceSet).stream().filter(instanceClazz -> instanceClazz instanceof ExampleComponentClass).collect(Collectors.toList());
 	
 		assertThat(instanceList).hasSize(1);
 		
@@ -151,7 +151,7 @@ public class AcmeReflectSpringUtilTest {
 		assertNotNull(instanceSet);
 		assertThat(instanceSet).hasSize(NUM_CLASS);
 		
-		List<Object> instanceList = AcmeCollectionConverter.toList(instanceSet).stream().filter(instanceClazz -> instanceClazz instanceof ExampleComponentWithParameterClass).collect(Collectors.toList());
+		List<Object> instanceList = CollectionConverter.toList(instanceSet).stream().filter(instanceClazz -> instanceClazz instanceof ExampleComponentWithParameterClass).collect(Collectors.toList());
 		
 		assertThat(instanceList).hasSize(1);
 		

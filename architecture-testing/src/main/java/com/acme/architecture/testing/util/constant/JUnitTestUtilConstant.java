@@ -12,6 +12,8 @@ public final class JUnitTestUtilConstant {
 	public static final String VALIDATION_CLASS_ONE_CONSTRUCTOR_MESSAGE = "Class should have one constructor";
 
 	public static final String VALIDATION_CONSTRUCTOR_NO_PRIVATE_MESSAGE = "Constructor is not private";
+	
+	public static final String VALIDATION_CONSTRUCTOR_NO_PROTECTED_MESSAGE = "Constructor is not protected";
 
 	public static final String VALIDATION_FIELD_NO_STATIC_MESSAGE = "There exists a non-static field : "+SUBSTITUTION_MARK;
 

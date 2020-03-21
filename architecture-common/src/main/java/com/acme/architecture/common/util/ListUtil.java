@@ -6,9 +6,9 @@ import java.util.List;
 import java.util.StringTokenizer;
 import java.util.stream.Collectors;
 
-public class AcmeListUtil {
+public final class ListUtil {
 
-	protected AcmeListUtil() {
+	protected ListUtil() {
 		throw new IllegalStateException("AcmeListUtil");
 	}
 
@@ -17,7 +17,7 @@ public class AcmeListUtil {
 		if (strList == null || strList.isEmpty())
 			return Collections.emptyList();
 
-		return strList.stream().filter(AcmeListUtil::isNumeric).collect(Collectors.toList());
+		return strList.stream().filter(ListUtil::isNumeric).collect(Collectors.toList());
 	}
 	
 	

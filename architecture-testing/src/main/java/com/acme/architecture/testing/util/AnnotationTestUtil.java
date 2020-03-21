@@ -6,7 +6,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class AnnotationTestUtil {
+public final class AnnotationTestUtil {
 
 	protected AnnotationTestUtil() {
 		throw new IllegalStateException("AnnotationTestUtil");

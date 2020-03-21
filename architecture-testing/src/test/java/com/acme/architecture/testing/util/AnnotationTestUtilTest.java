@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.Arrays;
 import java.util.List;
 
@@ -37,6 +38,12 @@ public class AnnotationTestUtilTest {
 			new AnnotationTestUtil();
 		});
 
+	}
+	
+	@Test
+	public void whenCallACheckUtilClassWellDefined()
+			throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
+		JUnitTestUtil.checkUtilClassWellDefined(AnnotationTestUtil.class);
 	}
 
 	

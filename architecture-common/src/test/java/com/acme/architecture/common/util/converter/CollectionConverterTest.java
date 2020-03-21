@@ -12,7 +12,7 @@ import java.util.Set;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class AcmeCollectionConverterTest {
+public class CollectionConverterTest {
 
 	private Integer simpleObject;
 
@@ -28,14 +28,14 @@ public class AcmeCollectionConverterTest {
 	public void shouldCreateDefaultConstructor_ThenTrowIllegalStateException() {
 
 		assertThrows(IllegalStateException.class, () -> {
-			new AcmeCollectionConverter();
+			new CollectionConverter();
 		});
 	}
 
 	@Test
 	public void whenCallToListWithNull_ThenReturnEmptyList() {
 
-		List<?> result = AcmeCollectionConverter.toList(null);
+		List<?> result = CollectionConverter.toList(null);
 		assertNotNull(result);
 		assertThat(result).isEmpty();
 	}
@@ -45,7 +45,7 @@ public class AcmeCollectionConverterTest {
 
 		List<Integer> oneElementList = Arrays.asList(simpleObject);
 
-		List<Integer> result = AcmeCollectionConverter.toList(oneElementList);
+		List<Integer> result = CollectionConverter.toList(oneElementList);
 
 		assertNotNull(result);
 		assertThat(result).hasSize(1);
@@ -55,7 +55,7 @@ public class AcmeCollectionConverterTest {
 	@Test
 	public void whenCallToListWithElementList_ThenReturnListWithElementList() {
 
-		List<Integer> result = AcmeCollectionConverter.toList(simpleObjectList);
+		List<Integer> result = CollectionConverter.toList(simpleObjectList);
 
 		assertNotNull(result);
 		assertThat(result).hasSize(simpleObjectList.size());
@@ -65,7 +65,7 @@ public class AcmeCollectionConverterTest {
 	@Test
 	public void whenCallToSetWithNull_ThenReturnEmptySet() {
 
-		Set<?> result = AcmeCollectionConverter.toSet(null);
+		Set<?> result = CollectionConverter.toSet(null);
 		
 		assertNotNull(result);
 		assertThat(result).isEmpty();
@@ -74,7 +74,7 @@ public class AcmeCollectionConverterTest {
 	@Test
 	public void whenCallToSetWithEmpty_ThenReturnEmptySet() {
 
-		Set<?> result = AcmeCollectionConverter.toSet(Collections.emptyList());
+		Set<?> result = CollectionConverter.toSet(Collections.emptyList());
 		
 		assertNotNull(result);
 		assertThat(result).isEmpty();
@@ -85,7 +85,7 @@ public class AcmeCollectionConverterTest {
 
 		List<Integer> oneElementList = Arrays.asList(simpleObject);
 
-		Set<Integer> result = AcmeCollectionConverter.toSet(oneElementList);
+		Set<Integer> result = CollectionConverter.toSet(oneElementList);
 
 		assertNotNull(result);
 		assertThat(result).hasSize(1);

@@ -37,17 +37,6 @@ public final class JUnitTestUtil {
 		// Check Constructors
 		assertEquals(JUnitTestUtilConstant.VALIDATION_CLASS_ONE_CONSTRUCTOR_MESSAGE, 1,
 				clazz.getDeclaredConstructors().length);
-
-		final Constructor<?> constructor = clazz.getDeclaredConstructor();
-
-		// Depends : constructor.isAccessible() ||
-		if (!Modifier.isPrivate(constructor.getModifiers())) {
-			fail(JUnitTestUtilConstant.VALIDATION_CONSTRUCTOR_NO_PRIVATE_MESSAGE);
-		}
-
-		constructor.setAccessible(true);
-		constructor.newInstance();
-		constructor.setAccessible(false);
 	}
 
 	public static void checkConstantClassWellDefined(final Class<?> clazz)
@@ -55,6 +44,17 @@ public final class JUnitTestUtil {
 			IllegalArgumentException, InvocationTargetException {
 		
 		checkCommonValidationClassWellDefined(clazz);
+		
+		final Constructor<?> constructor = clazz.getDeclaredConstructor();
+
+		// Depends || constructor.isAccessible()
+		if (!Modifier.isPrivate(constructor.getModifiers())  ) {
+			fail(JUnitTestUtilConstant.VALIDATION_CONSTRUCTOR_NO_PRIVATE_MESSAGE);
+		}
+
+		constructor.setAccessible(true);
+		constructor.newInstance();
+		constructor.setAccessible(false);
 
 		// Check Fields
 		for (final Field field : clazz.getDeclaredFields()) {
@@ -69,6 +69,17 @@ public final class JUnitTestUtil {
 			InstantiationException, IllegalAccessException, IllegalArgumentException, InvocationTargetException {
 		
 		checkCommonValidationClassWellDefined(clazz);
+		
+		final Constructor<?> constructor = clazz.getDeclaredConstructor();
+
+		// Depends || constructor.isAccessible()
+		if (!Modifier.isProtected(constructor.getModifiers())  ) {
+			fail(JUnitTestUtilConstant.VALIDATION_CONSTRUCTOR_NO_PROTECTED_MESSAGE);
+		}
+
+		//constructor.setAccessible(true);
+		//constructor.newInstance();
+		//constructor.setAccessible(false);
 
 		// Check Methods
 		for (final Method method : clazz.getMethods()) {

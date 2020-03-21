@@ -6,9 +6,9 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
 
-public final class AcmeDateUtil {
+public final class DateUtil {
 
-	public AcmeDateUtil() {
+	protected DateUtil() {
 		throw new IllegalStateException("AcmeDateUtil");
 	}
 

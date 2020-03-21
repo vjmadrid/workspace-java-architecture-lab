@@ -57,7 +57,7 @@ public class JUnitTestUtil {
 		checkCommonValidationClassWellDefined(clazz);
 
 		// Check Fields
-		for (final Field field : clazz.getDeclaredFields()) { // && field.getDeclaringClass().equals(clazz)
+		for (final Field field : clazz.getDeclaredFields()) {
 			if (!Modifier.isStatic(field.getModifiers())) {
 				fail(JUnitTestUtilConstant.VALIDATION_FIELD_NO_STATIC_MESSAGE
 						.replace(JUnitTestUtilConstant.SUBSTITUTION_MARK, field.getName()));

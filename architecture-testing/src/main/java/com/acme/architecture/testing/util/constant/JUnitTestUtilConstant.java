@@ -9,7 +9,7 @@ public final class JUnitTestUtilConstant {
 	public static final String SUBSTITUTION_MARK = "{}";
 	
 	public static final String VALIDATION_CLASS_FINAL_MESSAGE = "Class should be final";
-	public static final String VALIDATION_CLASS_ONE_CONSTRUCTOR_MESSAGE = "Class should be final";
+	public static final String VALIDATION_CLASS_ONE_CONSTRUCTOR_MESSAGE = "Class should have one constructor";
 
 	public static final String VALIDATION_CONSTRUCTOR_NO_PRIVATE_MESSAGE = "Constructor is not private";
 

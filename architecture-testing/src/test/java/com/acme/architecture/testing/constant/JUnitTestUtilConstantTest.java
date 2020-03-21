@@ -2,7 +2,7 @@ package com.acme.architecture.testing.constant;
 
 import java.lang.reflect.InvocationTargetException;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import com.acme.architecture.testing.util.JUnitTestUtil;
 import com.acme.architecture.testing.util.constant.JUnitTestUtilConstant;

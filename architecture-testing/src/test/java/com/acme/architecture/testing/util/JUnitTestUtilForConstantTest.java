@@ -1,8 +1,9 @@
 package com.acme.architecture.testing.util;
 
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+import org.junit.jupiter.api.Test;
 
 import com.acme.architecture.testing.util.constant.JUnitTestUtilConstant;
 import com.acme.architecture.testing.util.example.clazz.ExampleCoverageProtectedConstructorClass;
@@ -14,57 +15,67 @@ import com.acme.architecture.testing.util.example.clazz.ExampleCoverageNoFinalCl
 
 public class JUnitTestUtilForConstantTest {
 
-	@Rule
-	public ExpectedException exception = ExpectedException.none();
-
 	@Test
 	public void shouldCreateDefaultConstructor_ThenTrowIllegalStateException() {
-		exception.expect(IllegalStateException.class);
-		
-		new JUnitTestUtil();
+
+		assertThrows(IllegalStateException.class, () -> {
+			new JUnitTestUtil();
+		});
+
 	}
 
+	@Test
 	public void whenCallACheckConstantClassWellDefinedWithNoFinal_ThenReturnAssertionErrorInClass() throws Exception {
-    	exception.expect(AssertionError.class);
-    	exception.expectMessage(JUnitTestUtilConstant.VALIDATION_CLASS_FINAL_MESSAGE);
-    	
-		JUnitTestUtil.checkConstantClassWellDefined(ExampleCoverageNoFinalClass.class);
+
+		AssertionError exception = assertThrows(AssertionError.class, () -> {
+			JUnitTestUtil.checkConstantClassWellDefined(ExampleCoverageNoFinalClass.class);
+		});
+
+		assertEquals(JUnitTestUtilConstant.VALIDATION_CLASS_FINAL_MESSAGE, exception.getMessage());
 	}
-	
-    @Test
-	public void whenCallACheckConstantClassWellDefinedWithMoreConstructos_ThenReturnAssertionErrorInClass() throws Exception {
-    	exception.expect(AssertionError.class);
-    	exception.expectMessage(JUnitTestUtilConstant.VALIDATION_CLASS_ONE_CONSTRUCTOR_MESSAGE);
-  	
-    	JUnitTestUtil.checkConstantClassWellDefined(ExampleCoverageMoreConstructorsClass.class);
+
+	@Test
+	public void whenCallACheckConstantClassWellDefinedWithMoreConstructor_ThenReturnAssertionErrorInClass()
+			throws Exception {
+
+		AssertionError exception = assertThrows(AssertionError.class, () -> {
+			JUnitTestUtil.checkConstantClassWellDefined(ExampleCoverageMoreConstructorsClass.class);
+		});
+
+		assertEquals(JUnitTestUtilConstant.VALIDATION_CLASS_ONE_CONSTRUCTOR_MESSAGE + " expected:<1> but was:<2>",
+				exception.getMessage());
 	}
 
 	@Test
 	public void whenCallACheckConstantClassWellDefinedWithProtectedConstructor_ThenReturnAssertionErrorInClass()
 			throws Exception {
-		exception.expect(AssertionError.class);
-		exception.expectMessage(JUnitTestUtilConstant.VALIDATION_CONSTRUCTOR_NO_PRIVATE_MESSAGE);
 
-		JUnitTestUtil.checkConstantClassWellDefined(ExampleCoverageProtectedConstructorClass.class);
+		AssertionError exception = assertThrows(AssertionError.class, () -> {
+			JUnitTestUtil.checkConstantClassWellDefined(ExampleCoverageProtectedConstructorClass.class);
+		});
+
+		assertEquals(JUnitTestUtilConstant.VALIDATION_CONSTRUCTOR_NO_PRIVATE_MESSAGE, exception.getMessage());
 	}
-	
+
 	@Test
-	public void whenCallACheckConstantClassWellDefinedWithEmpty_ThenReturnNothing() throws Exception{
+	public void whenCallACheckConstantClassWellDefinedWithEmpty_ThenReturnNothing() throws Exception {
 		JUnitTestUtil.checkConstantClassWellDefined(ExampleCoverageEmptyClass.class);
 	}
-	
+
 	@Test
 	public void whenCallACheckConstantClassWellDefinedWithPublicConstructor_ThenReturnAssertionErrorInClass()
 			throws Exception {
-		exception.expect(AssertionError.class);
-		exception.expectMessage(JUnitTestUtilConstant.VALIDATION_FIELD_NO_STATIC_MESSAGE
-				.replace(JUnitTestUtilConstant.SUBSTITUTION_MARK, "EXAMPLE_CONSTANT"));
 
-		JUnitTestUtil.checkConstantClassWellDefined(ExampleCoverageConstantInvalidClass.class);
+		AssertionError exception = assertThrows(AssertionError.class, () -> {
+			JUnitTestUtil.checkConstantClassWellDefined(ExampleCoverageConstantInvalidClass.class);
+		});
+
+		assertEquals(JUnitTestUtilConstant.VALIDATION_FIELD_NO_STATIC_MESSAGE
+				.replace(JUnitTestUtilConstant.SUBSTITUTION_MARK, "EXAMPLE_CONSTANT"), exception.getMessage());
 	}
-		
+
 	@Test
-	public void whenCallACheckConstantClassWellDefined_ThenReturnNothing() throws Exception{
+	public void whenCallACheckConstantClassWellDefined_ThenReturnNothing() throws Exception {
 		JUnitTestUtil.checkConstantClassWellDefined(ExampleCoverageConstantClass.class);
 	}
 

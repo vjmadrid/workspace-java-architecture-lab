@@ -1,17 +1,18 @@
 package com.acme.architecture.testing.util;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
+
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.util.Arrays;
 import java.util.List;
 
-import org.junit.Before;
-import org.junit.Rule;
-import org.junit.Test;
-import org.junit.rules.ExpectedException;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
 public class AnnotationTestUtilTest {
@@ -22,11 +23,8 @@ public class AnnotationTestUtilTest {
 	private List<String> annotationListMockClassTest = null;
 	private List<String> annotationPartialListMockClassTest = null;
 	
-	@Rule
-	public ExpectedException exception = ExpectedException.none();
-
 	
-	@Before
+	@BeforeEach
 	public final void setUp() {
 		annotationListMockClassTest = Arrays.asList("Target","Retention","Documented");
 		annotationPartialListMockClassTest = Arrays.asList("Target","Retention");
@@ -34,9 +32,11 @@ public class AnnotationTestUtilTest {
 	
 	@Test
 	public void shouldCreateDefaultConstructor_ThenTrowIllegalStateException() {
-		exception.expect(IllegalStateException.class);
 		
-		new AnnotationTestUtil();
+		assertThrows(IllegalStateException.class, ()->{
+			new AnnotationTestUtil();
+		});
+
 	}
 
 	

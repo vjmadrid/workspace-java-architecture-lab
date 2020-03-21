@@ -18,16 +18,21 @@
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
 		<!-- Dependency Versions -->
-		<assertj-core.version>3.13.2</assertj-core.version>
-		<mockito-core.version>3.1.0</mockito-core.version>
-		<junit.version>4.12</junit.version>
+		<junit.platform.version>1.6.0</junit.platform.version>
 		<junit.jupiter.version>5.6.0</junit.jupiter.version>
-		<junit.vintage.version>${junit.version}.0</junit.vintage.version>
-		<junit.platform.version>1.5.0</junit.platform.version>
-
+		
+		<junit.version>4.13</junit.version>
+		<junit.vintage.version>5.6.0</junit.vintage.version>
+		
+		<mockito.version>3.3.3</mockito.version>
+		
+		<assertj-core.version>3.15.0</assertj-core.version>
+		
 		<!-- Plugins -->
 		<maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
 		<maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
+		<maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+		<jacoco-maven-plugin.version>0.8.5</jacoco-maven-plugin.version>
 	</properties>
 
 	<dependencies>
@@ -35,44 +40,51 @@
 		<!-- *** Architecture Libraries *** -->
 
 		<!-- *** Third Party Libraries *** -->
-
-		<!-- assertj-core : assertions for testing -->
+		
+		<!-- * JUnit Platform * : Running and discovering test (for use in : tools (Eclipse, Idea,...) and build tools (Maven, Gradle, etc.)) -->
+		
+		<!-- junit-platform-runner : Platform unit test framework v5 (Add JUnit Platform + TestEngine API) -> Basic execute test -->
 		<dependency>
-			<groupId>org.assertj</groupId>
-			<artifactId>assertj-core</artifactId>
-			<version>${assertj-core.version}</version>
+			<groupId>org.junit.platform</groupId>
+			<artifactId>junit-platform-runner</artifactId>
+			<version>${junit.platform.version}</version>
 		</dependency>
+		
+		<!-- * JUnit Jupiter * -->
 
-		<!-- mockito : mocking framework -->
-		<dependency>
-			<groupId>org.mockito</groupId>
-			<artifactId>mockito-core</artifactId>
-			<version>${mockito-core.version}</version>
-		</dependency>
-
-		<!-- junit : unit test framework -->
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
-		</dependency>
-
+		<!-- junit-jupiter-engine : unit test framework v5 (Add JUnit Platform + API) Use write test (include : annotations, etc.) -->
 		<dependency>
 			<groupId>org.junit.jupiter</groupId>
 			<artifactId>junit-jupiter-engine</artifactId>
 			<version>${junit.jupiter.version}</version>
 		</dependency>
 
+
+		<!-- junit-vintage-engine : unit test framework for execute JUnit 3 and JUnit 4 (Add JUnit 4.13 transitively depends version vintage) -->
 		<dependency>
 			<groupId>org.junit.vintage</groupId>
 			<artifactId>junit-vintage-engine</artifactId>
-			<version>${junit.vintage.version}</version>
+			<version>${junit.jupiter.version}</version>
 		</dependency>
-
+		
+		<!-- assertj-core : assertions for testing -->
 		<dependency>
-			<groupId>org.junit.platform</groupId>
-			<artifactId>junit-platform-runner</artifactId>
-			<version>${junit.platform.version}</version>
+			<groupId>org.assertj</groupId>
+			<artifactId>assertj-core</artifactId>
+			<version>${assertj-core.version}</version>
+		</dependency>
+		
+		<!-- mockito : mocking framework -->
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-core</artifactId>
+			<version>${mockito.version}</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.mockito</groupId>
+			<artifactId>mockito-junit-jupiter</artifactId>
+			<version>${mockito.version}</version>
 		</dependency>
 
 	</dependencies>
@@ -107,10 +119,28 @@
 				reports in the directory target/surefire-reports -->
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
-				<version>2.22.2</version>
+				<version>${maven-surefire-plugin.version}</version>
 				<configuration>
+					
+					<includes>
+						<include>**/Test*.java</include>
+						<include>**/*Test.java</include>
+						<include>**/*Tests.java</include>
+						<include>**/*TestCase.java</include>
+					</includes>
+					
 					<skipTests>${skip.unit.tests}</skipTests>
 					<testFailureIgnore>false</testFailureIgnore>
+					
+					<properties>
+						<configurationParameters>
+							junit.jupiter.execution.parallel.enabled=true
+							junit.jupiter.execution.parallel.config.dynamic.factor=2
+							junit.platform.output.capture.stdout=true
+							junit.platform.output.capture.stderr=true
+						</configurationParameters>
+					</properties>
+					
 				</configuration>
 			</plugin>
 
@@ -175,8 +205,6 @@
 					</execution>
 				</executions>
 			</plugin>
-
-
 
 		</plugins>
 	</build>

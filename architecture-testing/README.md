@@ -5,7 +5,12 @@ This project represents a **architecture library (dependency)** related with **t
 This library stands out for:
 
 * Provides **utility classes** to facilitaty testing with certain elements : exceptions, constant classes, etc. 
-* Define **testing framework** and their versioning
+* Define **unit testing framework** and their versioning
+* Define **mocking testing framework** and their versioning
+* Define **matcher testing framework** and their versioning
+
+
+
 
 
 ## Technological Stack
@@ -19,10 +24,17 @@ N/A
 
 Third Party Dependencies
 
-* **hamcrest** [2.2] : Matching / asserts framework
-* **assertj-core** [3.13.2] : Matching / asserts framework
-* **mockito** [1.10.19] : Mocking framework
-* **junit** [4.12] : Unity test framework
+* **assertj-core** [3.15.0] : Matching / asserts framework
+* **mockito** [3.3.3] : Mocking framework
+* **junit 4** [4.13] : Unit test framework (Version 4)
+
+* **junit-platform-runner** [1.6.0] : Platform unit test framework v5 (Add JUnit Platform + TestEngine API) -> Basic execute test
+* **junit-jupiter-engine** [5.6.0] : Unit test framework v5 (Add JUnit Platform + API) Use write test (include : annotations, etc.) (Version 5)
+* **junit-vintage-engine** [5.6.0] : Unit test framework for execute JUnit 3 and JUnit 4 (Add JUnit 4.13 transitively depends version vintage)
+
+
+
+
 
 
 ## Prerequisites
@@ -31,6 +43,9 @@ Define what elements are needed to install the software
 
 * Java 8 installed (1.5+ version required)
 * Maven installed  (3+)
+
+
+
 
 
 ## Installation
@@ -50,9 +65,16 @@ mvn clean install
 The result will be the generation of an artifact in your Maven repository (local)
 
 
+
+
+
+
 ## Testing
 
-N/A
+Apply
+
+
+
 
 
 ## Deploy
@@ -60,15 +82,24 @@ N/A
 Custom Library
 
 
+
+
+
 ## Use
 
 Custom Library
+
+
 
 
 ## Versioning
 
 **Note :** [SemVer](http://semver.org/) is used for the versioning. 
 To see the available versions access the repository tags
+
+
+
+
 
 ## Authors
 

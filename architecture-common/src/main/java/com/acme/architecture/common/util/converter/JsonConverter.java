@@ -1,4 +1,4 @@
-package com.acme.architecture.common.util;
+package com.acme.architecture.common.util.converter;
 
 import java.io.IOException;
 
@@ -10,20 +10,27 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.ObjectWriter;
 import com.fasterxml.jackson.dataformat.yaml.YAMLMapper;
 
-public final class JsonUtil {
+public final class JsonConverter {
 
-	protected JsonUtil() {
-		throw new IllegalStateException("AcmeRestUtil");
+	protected JsonConverter() {
+		throw new IllegalStateException("JsonConverter");
 	}
 
-	public static String convertObjectToJson(Object object) throws JsonProcessingException {
+	public static String convertObjectToJson(Object object, boolean activePretty ) throws JsonProcessingException {
 
 		if (object != null) {
-			ObjectWriter ow = new ObjectMapper().writer().withDefaultPrettyPrinter();
-			return ow.writeValueAsString(object);
+			if (activePretty) {
+				return new ObjectMapper().writerWithDefaultPrettyPrinter().writeValueAsString(object);
+			} 
+			
+			return new ObjectMapper().writeValueAsString(object);
 		}
 		
 		return null;
+	}
+	
+	public static String convertObjectToJsonDefault(Object object) throws JsonProcessingException {
+		return JsonConverter.convertObjectToJson(object,Boolean.FALSE);
 	}
 
 	public static String convertJsonToYaml(String jsonString) throws IOException {
@@ -38,14 +45,14 @@ public final class JsonUtil {
 		return new YAMLMapper().writeValueAsString(jsonNodeTree);
 	}
 	
-	public static Class<?> convertJsonToObject(final String jsonString , Class<?> valueClass) throws JsonParseException, JsonMappingException, IOException {
+	public static Object convertJsonToObject(final String jsonString , Class<?> valueClass) throws JsonParseException, JsonMappingException, IOException {
 		
 		if (((jsonString == null) || "".equals(jsonString)) || (valueClass == null)) {
 			return null;
 		}
 		
 		ObjectMapper objectMapper = new ObjectMapper();
-		return (Class<?>) objectMapper.readValue(jsonString, valueClass); 
+		return objectMapper.readValue(jsonString, valueClass); 
 	}
 
 }

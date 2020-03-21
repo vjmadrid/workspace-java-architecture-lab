@@ -1,6 +1,8 @@
-package com.acme.architecture.common.util;
+package com.acme.architecture.common.util.converter;
 
+import static org.junit.Assert.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
@@ -8,10 +10,11 @@ import java.lang.reflect.InvocationTargetException;
 
 import org.junit.jupiter.api.Test;
 
+import com.acme.architecture.common.util.converter.JsonConverter;
 import com.acme.architecture.common.util.example.ExampleJsonClass;
 import com.acme.architecture.testing.util.JUnitTestUtil;
 
-public final class JsonUtilTest {
+public final class JsonConverterTest {
 
 	private String EXAMPLE_JSON = "{" + System.lineSeparator() + "  \"field1\" : \"1\"," + System.lineSeparator()
 			+ "  \"field2\" : 2" + System.lineSeparator() + "}";
@@ -29,43 +32,54 @@ public final class JsonUtilTest {
 	public void shouldCreateDefaultConstructor_ThenTrowIllegalStateException() {
 
 		assertThrows(IllegalStateException.class, () -> {
-			new JsonUtil();
+			new JsonConverter();
 		});
 	}
 	
 	@Test
 	public void whenCallACheckUtilClassWellDefined()
 			throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
-		JUnitTestUtil.checkUtilClassWellDefined(JsonUtil.class);
+		JUnitTestUtil.checkUtilClassWellDefined(JsonConverter.class);
 	}
 	
 	@Test
 	public void whenCallAConvertObjectToJsonWithNull_thenReturnNull() throws Exception {
-		assertNull(JsonUtil.convertObjectToJson(null));
+		assertNull(JsonConverter.convertObjectToJson(null, false));
 	}
 
 	@Test
 	public void whenCallAConvertObjectToJson_thenReturnObjectAsJson() throws Exception {
-		assertEquals(EXAMPLE_JSON, JsonUtil.convertObjectToJson(new ExampleJsonClass()));
+		assertEquals(EXAMPLE_JSON, JsonConverter.convertObjectToJson(new ExampleJsonClass(), false));
+	}
+	
+	@Test
+	public void whenCallAConvertObjectToJsonPretty_thenReturnObjectAsJson() throws Exception {
+		assertNotEquals(EXAMPLE_JSON, JsonConverter.convertObjectToJson(new ExampleJsonClass(), true));
+	}
+	
+	
+	@Test
+	public void whenCallAConvertObjectToJsonDefault_thenReturnObjectAsJson() throws Exception {
+		assertEquals(EXAMPLE_JSON, JsonConverter.convertObjectToJsonDefault(new ExampleJsonClass()));
 	}
 
 	@Test
 	public void whenCallAConvertJsonToYamlWithNull_thenReturnNull() throws Exception {
-		String resultJSON = JsonUtil.convertJsonToYaml(null);
+		String resultJSON = JsonConverter.convertJsonToYaml(null);
 
 		assertNull(resultJSON);
 	}
 
 	@Test
 	public void whenCallAConvertJsonToYamlWithEmpty_thenReturnNull() throws Exception {
-		String resultJSON = JsonUtil.convertJsonToYaml(EMPTY_RESULT);
+		String resultJSON = JsonConverter.convertJsonToYaml(EMPTY_RESULT);
 
 		assertNull(resultJSON);
 	}
 
 	@Test
 	public void whenCallAConvertJsonToYaml_thenReturnYaml() throws Exception {
-		String resultJSON = JsonUtil
+		String resultJSON = JsonConverter
 				.convertJsonToYaml(EXAMPLE_JSON.replaceAll(NEW_LINE_WINDOWS, NEW_LINE_LINUX));
 
 		assertEquals(EXAMPLE_YAML.replaceAll(NEW_LINE_WINDOWS, NEW_LINE_LINUX), resultJSON);
@@ -73,30 +87,31 @@ public final class JsonUtilTest {
 	
 	@Test
 	public void whenCallAConvertJsonToObjectWithNull_thenReturnNull() throws Exception {
-		assertNull(JsonUtil.convertJsonToObject(null, ExampleJsonClass.class));
+		assertNull(JsonConverter.convertJsonToObject(null, ExampleJsonClass.class));
 	}
 	
 	@Test
 	public void whenCallAConvertJsonToObjectWithEmpty_thenReturnNull() throws Exception {
-		assertNull(JsonUtil.convertJsonToObject("", ExampleJsonClass.class));
+		assertNull(JsonConverter.convertJsonToObject("", ExampleJsonClass.class));
 	}
 	
 	@Test
 	public void whenCallAConvertJsonToObjectWithNullClass_thenReturnNull() throws Exception {
-		String resultJSON = JsonUtil
+		String resultJSON = JsonConverter
 				.convertJsonToYaml(EXAMPLE_JSON.replaceAll(NEW_LINE_WINDOWS, NEW_LINE_LINUX));
 		
-		assertNull(JsonUtil.convertJsonToObject(resultJSON, null));
+		assertNull(JsonConverter.convertJsonToObject(resultJSON, null));
 	}
 	
 	@Test
 	public void whenCallAConvertJsonToObject_thenReturnObject() throws Exception {
-		String resultJSON = JsonUtil
-				.convertJsonToYaml(EXAMPLE_JSON.replaceAll(NEW_LINE_WINDOWS, NEW_LINE_LINUX));
+		String resultJSON = JsonConverter.convertObjectToJsonDefault(new ExampleJsonClass());
+	
+		ExampleJsonClass resultObject = (ExampleJsonClass) JsonConverter.convertJsonToObject(resultJSON, ExampleJsonClass.class);
 		
-		Class<?> resultObject = JsonUtil.convertJsonToObject(resultJSON, ExampleJsonClass.class);
-		
-		assertNull(resultObject);
+		assertNotNull(resultObject);
+		assertEquals("1", resultObject.getField1());
+		assertEquals(2, resultObject.getField2());
 	}
 
 }

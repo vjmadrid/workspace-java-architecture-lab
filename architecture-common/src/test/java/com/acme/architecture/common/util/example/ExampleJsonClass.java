@@ -1,7 +1,11 @@
 package com.acme.architecture.common.util.example;
 
-public class ExampleJsonClass {
+import java.io.Serializable;
 
+public class ExampleJsonClass implements Serializable {
+
+	private static final long serialVersionUID = -8219001645698314203L;
+	
 	private String field1 = "1";
 	private Integer field2 = 2;
 
@@ -12,5 +16,15 @@ public class ExampleJsonClass {
 	public Integer getField2() {
 		return field2;
 	}
+
+	public void setField1(String field1) {
+		this.field1 = field1;
+	}
+
+	public void setField2(Integer field2) {
+		this.field2 = field2;
+	}
+	
+	
 	
 }

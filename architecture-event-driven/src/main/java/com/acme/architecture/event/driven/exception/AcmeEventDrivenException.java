@@ -2,19 +2,19 @@ package com.acme.architecture.event.driven.exception;
 
 import com.acme.architecture.common.exception.AcmeException;
 
-public class EventDrivenException extends AcmeException {
+public class AcmeEventDrivenException extends AcmeException {
 
 	private static final long serialVersionUID = -4102004426627995641L;
 
-	public EventDrivenException(String message) {
+	public AcmeEventDrivenException(String message) {
 		super(message);
 	}
 
-	public EventDrivenException(Throwable cause) {
+	public AcmeEventDrivenException(Throwable cause) {
 		super(cause);
 	}
 
-	public EventDrivenException(String message, Throwable cause) {
+	public AcmeEventDrivenException(String message, Throwable cause) {
 		super(message, cause);
 	}
 

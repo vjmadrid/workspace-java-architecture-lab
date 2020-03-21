@@ -4,15 +4,6 @@ import java.io.Serializable;
 
 public abstract class AbstractEntity implements Serializable {
 
-	private static final long serialVersionUID = -5199514979931305823L;
+	private static final long serialVersionUID = -7643472199261145774L;
 
-	@Override
-	public abstract int hashCode();
-	
-	@Override
-	public abstract boolean equals(Object object);
-	
-	@Override
-	public abstract String toString();
-	
 }

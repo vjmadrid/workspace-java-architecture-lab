@@ -4,14 +4,14 @@ import java.lang.reflect.InvocationTargetException;
 
 import org.junit.Test;
 
-import com.acme.architecture.testing.util.JUnitTestBuilder;
+import com.acme.architecture.testing.util.JUnitTestUtil;
 
 public class GenericEventTypeEnumTest {
 
 	@Test
-	public void checkValueOfEnum() throws IllegalAccessException, IllegalArgumentException,
+	public void whenCallACheckSuperficialEnumCodeCoverage() throws IllegalAccessException, IllegalArgumentException,
 			InvocationTargetException, NoSuchMethodException, SecurityException {
-		JUnitTestBuilder.superficialEnumCodeCoverage(GenericEventTypeEnum.class);
+		JUnitTestUtil.checkSuperficialEnumCodeCoverage(GenericEventTypeEnum.class);
 	}
 
 }

@@ -13,6 +13,10 @@ This library stands out for:
 Note : This exception inherits the global exception of architecture.
 
 
+
+
+
+
 ## Technological Stack
 
 * Java 8
@@ -36,6 +40,9 @@ Define what elements are needed to install the software
 * Maven installed  (3+)
 
 
+
+
+
 ## Installation
 
 Steps to follow
@@ -53,11 +60,17 @@ mvn clean install
 The result will be the generation of an artifact in your Maven repository (local)
 
 
+
+
+
 ## Testing
 
-This project has tests : Unit 
+This project has tests : Unit + Integration
 
 Execute with IDE or Maven
+
+
+
 
 
 ## Deploy
@@ -65,15 +78,24 @@ Execute with IDE or Maven
 Custom Library
 
 
+
+
+
 ## Use
 
 Custom Library
+
+
+
 
 
 ## Versioning
 
 **Note :** [SemVer](http://semver.org/) is used for the versioning. 
 To see the available versions access the repository tags
+
+
+
 
 
 ## Authors

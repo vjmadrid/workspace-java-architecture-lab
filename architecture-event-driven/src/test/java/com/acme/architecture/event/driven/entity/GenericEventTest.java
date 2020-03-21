@@ -1,13 +1,15 @@
 package com.acme.architecture.event.driven.entity;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertNotSame;
-import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
 
-import org.junit.Before;
-import org.junit.Test;
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertNotSame;
+import static org.junit.jupiter.api.Assertions.assertNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import com.acme.architecture.event.driven.factory.dummy.DummyGenericEventDataFactory;
 
@@ -19,7 +21,7 @@ public class GenericEventTest {
 
 	private GenericEvent cloneGenericEvent;
 	
-	@Before
+	@BeforeEach
 	public void init() {
 		genericEvent = DummyGenericEventDataFactory.createSampleDefault();
 		cloneGenericEvent =  DummyGenericEventDataFactory.createSampleDefault();

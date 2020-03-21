@@ -6,7 +6,11 @@ import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.util.Date;
 
-public class DateUtil {
+public final class AcmeDateUtil {
+
+	public AcmeDateUtil() {
+		throw new IllegalStateException("AcmeDateUtil");
+	}
 
 	public static Date asDate(final LocalDate localDate) {
 		return Date.from(localDate.atStartOfDay().atZone(ZoneId.systemDefault()).toInstant());

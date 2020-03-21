@@ -12,9 +12,9 @@ import java.lang.reflect.Modifier;
 
 import com.acme.architecture.testing.util.constant.JUnitTestUtilConstant;
 
-public class JUnitTestUtil {
+public final class JUnitTestUtil {
 
-	public JUnitTestUtil() {
+	protected JUnitTestUtil() {
 		throw new IllegalStateException("JUnitTestUtil");
 	}
 

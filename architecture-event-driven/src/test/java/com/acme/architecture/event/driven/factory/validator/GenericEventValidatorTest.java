@@ -1,24 +1,26 @@
 package com.acme.architecture.event.driven.factory.validator;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+
+
+import static org.junit.jupiter.api.Assertions.assertFalse;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.Date;
 
-import org.junit.Before;
-import org.junit.Test;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Test;
 
 import com.acme.architecture.event.driven.entity.GenericEvent;
 import com.acme.architecture.event.driven.enumerate.GenericEventTypeEnum;
 import com.acme.architecture.event.driven.factory.dummy.DummyGenericEventDataFactory;
-import com.acme.architecture.testing.util.JUnitTestBuilder;
+import com.acme.architecture.testing.util.JUnitTestUtil;
 
 public class GenericEventValidatorTest {
 
 	private GenericEvent genericEventTest;
 
-	@Before
+	@BeforeEach
 	public void init() {
 		genericEventTest = DummyGenericEventDataFactory.createSampleDefault();
 	}
@@ -147,9 +149,9 @@ public class GenericEventValidatorTest {
 	}
 	
 	@Test
-	public void checkValueOfValidationUtils() throws IllegalAccessException, IllegalArgumentException,
+	public void whenCallACheckSuperficialEnumCodeCoverage() throws IllegalAccessException, IllegalArgumentException,
 			InvocationTargetException, NoSuchMethodException, SecurityException {
-		JUnitTestBuilder.superficialEnumCodeCoverage(GenericEventValidator.class);
+		JUnitTestUtil.checkSuperficialEnumCodeCoverage(GenericEventValidator.class);
 	}
 
 }

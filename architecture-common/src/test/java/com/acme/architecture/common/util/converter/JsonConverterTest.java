@@ -18,6 +18,8 @@ public final class JsonConverterTest {
 
 	private String EXAMPLE_JSON = "{" + System.lineSeparator() + "  \"field1\" : \"1\"," + System.lineSeparator()
 			+ "  \"field2\" : 2" + System.lineSeparator() + "}";
+	
+	private String EXAMPLE_JSON_BASIC = "{\"field1\":\"1\",\"field2\":2}";
 
 	private String EXAMPLE_YAML = "---" + System.lineSeparator() + "field1: \"1\"" + System.lineSeparator()
 			+ "field2: 2" + System.lineSeparator();
@@ -49,18 +51,18 @@ public final class JsonConverterTest {
 
 	@Test
 	public void whenCallAConvertObjectToJson_thenReturnObjectAsJson() throws Exception {
-		assertEquals(EXAMPLE_JSON, JsonConverter.convertObjectToJson(new ExampleJsonClass(), false));
+		assertEquals(EXAMPLE_JSON_BASIC, JsonConverter.convertObjectToJson(new ExampleJsonClass(), false));
 	}
 	
 	@Test
 	public void whenCallAConvertObjectToJsonPretty_thenReturnObjectAsJson() throws Exception {
-		assertNotEquals(EXAMPLE_JSON, JsonConverter.convertObjectToJson(new ExampleJsonClass(), true));
+		assertNotEquals(EXAMPLE_JSON.replaceAll(NEW_LINE_LINUX,NEW_LINE_WINDOWS), JsonConverter.convertObjectToJson(new ExampleJsonClass(), true));
 	}
 	
 	
 	@Test
 	public void whenCallAConvertObjectToJsonDefault_thenReturnObjectAsJson() throws Exception {
-		assertEquals(EXAMPLE_JSON, JsonConverter.convertObjectToJsonDefault(new ExampleJsonClass()));
+		assertEquals(EXAMPLE_JSON_BASIC, JsonConverter.convertObjectToJsonDefault(new ExampleJsonClass()));
 	}
 
 	@Test

@@ -32,6 +32,7 @@ Third Party Dependencies
 * **junit-jupiter-engine** [5.6.0] : Unit test framework v5 (Add JUnit Platform + API) Use write test (include : annotations, etc.) (Version 5)
 * **junit-vintage-engine** [5.6.0] : Unit test framework for execute JUnit 3 and JUnit 4 (Add JUnit 4.13 transitively depends version vintage)
 
+* **archunit-junit5-api** [0.13.1] : assert architecture rules framework (support junit5)
 
 
 

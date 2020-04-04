@@ -20,13 +20,11 @@
 		<!-- Dependency Versions -->
 		<junit.platform.version>1.6.0</junit.platform.version>
 		<junit.jupiter.version>5.6.0</junit.jupiter.version>
-		
 		<junit.version>4.13</junit.version>
 		<junit.vintage.version>5.6.0</junit.vintage.version>
-		
 		<mockito.version>3.3.3</mockito.version>
-		
 		<assertj-core.version>3.15.0</assertj-core.version>
+		<archunit.version>0.13.1</archunit.version>
 		
 		<!-- Plugins -->
 		<maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
@@ -85,6 +83,13 @@
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-junit-jupiter</artifactId>
 			<version>${mockito.version}</version>
+		</dependency>
+
+		<!-- archunit :assert architecture rules framework -->
+		<dependency>
+			<groupId>com.tngtech.archunit</groupId>
+			<artifactId>archunit-junit5-api</artifactId>
+			<version>${archunit.version}</version>
 		</dependency>
 
 	</dependencies>

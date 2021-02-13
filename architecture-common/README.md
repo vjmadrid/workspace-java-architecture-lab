@@ -4,11 +4,18 @@ This project represents a **architecture library (dependency)** related with **e
 
 This library stands out for:
 
-* Provides **global contant classes**
-* Provides **utility classes** to facilitaty testing with certain elements : converters, transformers, serialize, list, date,  convert object to JSON, Convert JSON to YAML, etc.
+* Provides **global contant classes** para : environment management, project structure, global values, DTO values, Entity values, web element configuration, validation patterns, resource file loader for Dummy support, etc.
+* Provides **utility classes** to facilitaty testing with certain elements : converters, transformers, serialize, list, date, ....
+* Provide **Conversion Classes (utility variant)** to perform conversions between formats, types, etc.
 * Provides a **generic exception** "AcmeException" (Main Business Exception) to have a differentiating type of exception in the project (the rest of exceptions should inherit from it)
 * Provides  an **abstract component for generating entities or models** 
 * Define **common frameworks** and their versioning (Help to define an architecture)
+
+Build / Deployment conditions :
+
+* Deploy as a library
+
+
 
 
 
@@ -27,7 +34,7 @@ Third Party Dependencies
 * **commons-collections4** [4.4] : Collection utilities
 * **commons-io** [2.6] : Class utilities for : file, streams, file comparator, file filters, ...
 
-* **lombok** [1.18.10] : Java Tool for automatic generation of getters, setters, equals, hashCode , toString, more
+* **lombok** [1.18.12] : Java Tool for automatic generation of getters, setters, equals, hashCode , toString, more
 * **mapstruct** [1.3.1.Final] : Tool for mapping classes
 
 * **jackson-databind** [2.10.0] : Utilities to work with Jackson
@@ -38,9 +45,7 @@ Third Party Dependencies
 * **log4j-over-slf4j** [1.7.25] : Implementation of log4j
 * **logback** [1.2.3] : Logging Framework
 
-* **hibernate-validator** [6.0.17.Final] :  Framework for Bean Validation
-
-
+* **hibernate-validator** [6.1.5.Final] :  Framework for Bean Validation
 
 
 

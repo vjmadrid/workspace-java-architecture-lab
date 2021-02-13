@@ -16,25 +16,31 @@
 		<!-- Compiler & Resources -->
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		
+		<!-- Architecture libraries -->
+		<acme-architecture-testing.version>0.0.1-SNAPSHOT</acme-architecture-testing.version>
 
 		<!-- Dependency Versions -->
 		<commons-lang3.version>3.9</commons-lang3.version>
 		<commons-collections4.version>4.4</commons-collections4.version>
 		<commons-io.version>2.6</commons-io.version>
-		<lombok.version>1.18.10</lombok.version>
+		<lombok.version>1.18.12</lombok.version>
 		<mapstruct.version>1.3.1.Final</mapstruct.version>
 		<jackson-databind.version>2.10.0</jackson-databind.version>
 
 		<logback.version>1.2.3</logback.version>
 		<slf4j.version>1.7.25</slf4j.version>
 		
-		<hibernate-validator.version>6.1.0.Final</hibernate-validator.version>
+		<hibernate-validator.version>6.1.5.Final</hibernate-validator.version>
 		
 		<!-- Plugins -->
 		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
 		<maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
 		<maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+		<maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
 		<jacoco-maven-plugin.version>0.8.5</jacoco-maven-plugin.version>
+		<maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
+		
 	</properties>
 
 	<!-- <profiles> They are found definitively in in ~/.m2/settings.xml -->
@@ -42,11 +48,18 @@
 	<dependencies>
 
 		<!-- *** Architecture Libraries *** -->
-
+		
+		<!-- architecture-testing : Custom Testing Library
+			Include : 
+				* JUnit, Mockito, ...
+				* archunit + custom rules
+				
+		-->
+		
 		<dependency>
 			<groupId>com.acme.architecture.testing</groupId>
 			<artifactId>architecture-testing</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>${acme-architecture-testing.version}</version>
 		</dependency>
 
 		<!-- *** Third Party Libraries *** -->
@@ -175,14 +188,44 @@
 				</configuration>
 			</plugin>
 			
-			<!-- maven-surefire-plugin : Plugin used to run unit tests - Generate reports in the directory target/surefire-reports -->
+			<!-- maven-surefire-plugin : Plugin used to run unit tests - Generate 
+				reports in the directory target/surefire-reports -->
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>${maven-surefire-plugin.version}</version>
 				<configuration>
 					<skipTests>${skip.unit.tests}</skipTests>
-					<testFailureIgnore>true</testFailureIgnore>
+					<testFailureIgnore>false</testFailureIgnore>
+					<properties>
+						<configurationParameters>
+							junit.jupiter.execution.parallel.enabled=true
+							junit.jupiter.execution.parallel.config.dynamic.factor=2
+							junit.platform.output.capture.stdout=true
+							junit.platform.output.capture.stderr=true
+						</configurationParameters>
+					</properties>
 				</configuration>
+			</plugin>
+			
+			<!-- maven-failsafe-plugin : Plugin used to run integration tests -->
+			<plugin>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>${maven-surefire-plugin.version}</version>
+				<configuration>
+					<skipITs>${skip.integration.tests}</skipITs>
+					<includes>
+						<include>**/*TestIT</include>
+						<include>**/*TestITCase</include>
+					</includes>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>integration-test</goal>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 
 			<!-- jacoco-maven-plugin : Plugin used to generate code coverage -->
@@ -234,7 +277,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-deploy-plugin</artifactId>
-				<version>2.8.2</version>
+				<version>${maven-deploy-plugin.version}</version>
 				<executions>
 					<execution>
 						<id>default-deploy</id>

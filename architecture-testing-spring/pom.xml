@@ -42,7 +42,7 @@
 
 		<!-- *** Architecture Libraries *** -->
 		
-		<!-- acme-architecture-testing : Custom Testing Library
+		<!-- architecture-testing : Custom Testing Library
 			Include : 
 				* JUnit, Mockito, ...
 				* archunit + custom rules
@@ -51,7 +51,7 @@
 		
 		<dependency>
 			<groupId>com.acme.architecture.testing</groupId>
-			<artifactId>acme-architecture-testing</artifactId>
+			<artifactId>architecture-testing</artifactId>
 			<version>${acme-architecture-testing.version}</version>
 		</dependency>
 		

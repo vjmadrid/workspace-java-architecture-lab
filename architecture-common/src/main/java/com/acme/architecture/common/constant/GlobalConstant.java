@@ -38,5 +38,11 @@ public final class GlobalConstant {
 	public static final String TAB = "\t";
 	
 	public static final String QUESTION_MARK = "?";
+	
+	public static final String COMMA = ",";
+
+	public static final String EQUAL = "=";
+
+	public static final String VERTICAL_SLASH = "|";
 
 }

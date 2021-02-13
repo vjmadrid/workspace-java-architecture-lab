@@ -5,8 +5,8 @@ import static com.tngtech.archunit.lang.syntax.ArchRuleDefinition.noClasses;
 
 import org.springframework.stereotype.Service;
 
+import com.acme.architecture.testing.archunit.constant.ArchUnitPackageConstant;
 import com.acme.architecture.testing.archunit.rule.core.catalog.CatalogServiceImplArchitectureRule;
-import com.acme.architecture.testing.constant.ArchUnitPackageConstant;
 import com.acme.architecture.testing.spring.constant.SpringArchUnitPackageConstant;
 import com.tngtech.archunit.junit.ArchTest;
 import com.tngtech.archunit.lang.ArchRule;

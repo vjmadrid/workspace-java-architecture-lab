@@ -1,6 +1,6 @@
 package com.acme.architecture.testing.spring.constant;
 
-import com.acme.architecture.testing.constant.ArchUnitPackageConstant;
+import com.acme.architecture.testing.archunit.constant.ArchUnitPackageConstant;
 
 public final class SpringArchUnitPackageConstant {
 	

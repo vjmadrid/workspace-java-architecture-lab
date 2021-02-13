@@ -1,13 +1,13 @@
-package com.acme.architecture.persistence.repository.test.impl;
+package com.acme.architecture.persistence.repository.impl;
 
 import java.io.Serializable;
 import java.util.HashMap;
 import java.util.Map;
 
-import com.acme.architecture.persistence.repository.GenericRepository;
+import com.acme.architecture.persistence.repository.GenericMapInMemoryRepository;
 
 public abstract class GenericMapInMemoryRepositoryImpl<T, PK extends Serializable>
-		implements GenericRepository<T, PK> {
+		implements GenericMapInMemoryRepository<T, PK> {
 
 	private Map<PK,T> entityMap = new HashMap<>();
 

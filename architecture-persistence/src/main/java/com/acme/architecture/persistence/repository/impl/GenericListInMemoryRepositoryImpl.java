@@ -1,13 +1,13 @@
-package com.acme.architecture.persistence.repository.test.impl;
+package com.acme.architecture.persistence.repository.impl;
 
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.acme.architecture.persistence.repository.GenericRepository;
+import com.acme.architecture.persistence.repository.GenericListInMemoryRepository;
 
 public abstract class GenericListInMemoryRepositoryImpl<T, PK extends Serializable>
-		implements GenericRepository<T, PK> {
+		implements GenericListInMemoryRepository<T, PK> {
 
 	private List<T> entityList = new ArrayList<T>();
 

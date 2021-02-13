@@ -10,7 +10,7 @@ import java.util.Date;
 
 import org.junit.jupiter.api.Test;
 
-import com.acme.architecture.testing.util.JUnitTestUtil;
+import com.acme.architecture.testing.junit.util.JUnitTestUtil;
 
 public final class DateUtilTest {
 	

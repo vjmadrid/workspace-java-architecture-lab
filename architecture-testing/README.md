@@ -8,6 +8,16 @@ This library stands out for:
 * Define **unit testing framework** and their versioning
 * Define **mocking testing framework** and their versioning
 * Define **matcher testing framework** and their versioning
+* Define **architecture testing framework** and their versioning
+* Define **logging testing framework** and their versioning
+* Provides **unit test reporting**
+* Provides a set of **architecture rules**  with different scopes of action and/or conventions (name, implementations, etc.)
+
+
+
+Build / deployment conditions :
+
+* Deployment as a library
 
 
 
@@ -24,15 +34,17 @@ N/A
 
 Third Party Dependencies
 
-* **assertj-core** [3.15.0] : Matching / asserts framework
-* **mockito** [3.3.3] : Mocking framework
-* **junit 4** [4.13] : Unit test framework (Version 4)
 
 * **junit-platform-runner** [1.6.0] : Platform unit test framework v5 (Add JUnit Platform + TestEngine API) -> Basic execute test
 * **junit-jupiter-engine** [5.6.0] : Unit test framework v5 (Add JUnit Platform + API) Use write test (include : annotations, etc.) (Version 5)
 * **junit-vintage-engine** [5.6.0] : Unit test framework for execute JUnit 3 and JUnit 4 (Add JUnit 4.13 transitively depends version vintage)
-
-* **archunit-junit5-api** [0.13.1] : assert architecture rules framework (support junit5)
+* **junit 4** [4.13] : Unit test framework (Version 4)
+* **mockito** [3.3.3] : Mocking framework
+* **assertj-core** [3.15.0] : Matching / asserts framework
+* **archunit-junit5-engine** [0.14.1] : assert architecture rules framework (support junit5)
+* **logcaptor** [2.3.2] : capture logging entries for unit testing purposes
+* **lombok** [1.18.12] : Java Tool for automatic generation of getters, setters, equals, hashCode , toString, more
+* **mapstruct** [1.3.1.Final] : Java Tool for mapping classes
 
 
 

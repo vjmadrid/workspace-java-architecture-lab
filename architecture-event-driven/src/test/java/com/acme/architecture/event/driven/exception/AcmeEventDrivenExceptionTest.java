@@ -1,9 +1,9 @@
 package com.acme.architecture.event.driven.exception;
 
-import com.acme.architecture.testing.util.AbstractExceptionTestUtil;
+import com.acme.architecture.testing.support.AbstractExceptionTestSupport;
 
 
-public class AcmeEventDrivenExceptionTest extends AbstractExceptionTestUtil {
+public class AcmeEventDrivenExceptionTest extends AbstractExceptionTestSupport {
 
 	@Override
 	protected Exception getExceptionWithParameter() {

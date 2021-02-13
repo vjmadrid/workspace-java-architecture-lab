@@ -14,8 +14,7 @@ import org.junit.jupiter.api.Test;
 import com.acme.architecture.event.driven.entity.GenericEvent;
 import com.acme.architecture.event.driven.enumerate.GenericEventTypeEnum;
 import com.acme.architecture.event.driven.factory.dummy.DummyGenericEventDataFactory;
-import com.acme.architecture.event.driven.util.validator.GenericEventValidator;
-import com.acme.architecture.testing.util.JUnitTestUtil;
+import com.acme.architecture.testing.junit.util.JUnitTestUtil;
 
 public class GenericEventValidatorTest {
 

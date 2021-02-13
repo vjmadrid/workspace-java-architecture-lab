@@ -16,6 +16,8 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mock;
 
+import com.acme.architecture.testing.junit.util.JUnitTestUtil;
+
 public class AnnotationTestUtilTest {
 	
 	private String ANNOTATION_STRING_CLASS_RESULT = "[]";

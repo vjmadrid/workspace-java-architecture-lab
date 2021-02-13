@@ -23,13 +23,17 @@
 		
 		<!-- Dependency Versions -->
 	
-		<!-- Important : Version 3 is aligned with spring-boot-starter-parent 2.2.0.RELEASE-->
-		<rest-assured.version>3.3.0</rest-assured.version>
-		<wiremock.version>2.26.3</wiremock.version>
+		<!-- Important : Version 3 is aligned with spring-boot-starter-parent 2.3.4.RELEASE-->
+		<rest-assured.version>4.3.1</rest-assured.version>
+		<wiremock.version>2.27.2</wiremock.version>
 
 		<!-- Plugins -->	
-		<maven-compiler-plugin.version>3.8.0</maven-compiler-plugin.version>
+		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
 		<maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
+		<maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+		<jacoco-maven-plugin.version>0.8.5</jacoco-maven-plugin.version>
+		<maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
+		
 	</properties>
 
 	<!-- <profiles> They are found definitively in in ~/.m2/settings.xml  -->
@@ -47,6 +51,7 @@
 		<!-- *** Third Party Libraries *** -->
 
 		<!-- rest-assured : Java DSL for easy testing of REST services -->
+		
 		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>rest-assured</artifactId>
@@ -54,6 +59,7 @@
 		</dependency>
 
 		<!-- json-schema-validator : JSON Schema Validator -->
+		
 		<dependency>
 			<groupId>io.rest-assured</groupId>
 			<artifactId>json-schema-validator</artifactId>
@@ -61,6 +67,7 @@
 		</dependency>
 		
 		<!-- wiremock : Mocking APIs -> web service test double -->
+		
 		<dependency>
             <groupId>com.github.tomakehurst</groupId>
             <artifactId>wiremock</artifactId>
@@ -74,6 +81,7 @@
 		<plugins>
 
 			<!-- maven-compiler-plugin : Plugin used to compile the project source -->
+			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -86,6 +94,7 @@
 			</plugin>
 
 			<!-- maven-resources-plugin : Plugin used to handle the project resources -->
+			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-resources-plugin</artifactId>
@@ -96,6 +105,7 @@
 			</plugin>
 			
 			<!-- maven-surefire-plugin : Plugin used to run unit tests - Generate reports in the directory target/surefire-reports -->
+			
 			<plugin>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>2.22.2</version>
@@ -104,7 +114,7 @@
 					<!-- No TEST Initial Commit -> After Change -->
 					<!-- 
 					<skipTests>${skip.unit.tests}</skipTests>
-					 -->
+					-->
 					
 					<skipTests>true</skipTests>
 					
@@ -113,10 +123,11 @@
 			</plugin>
 			
 			<!-- jacoco-maven-plugin : Plugin used to generate code coverage -->
+			
 			<plugin>
 				<groupId>org.jacoco</groupId>
 				<artifactId>jacoco-maven-plugin</artifactId>
-				<version>0.8.5</version>
+				<version>${jacoco-maven-plugin.version}</version>
 				<executions>
 					<execution>
 						<id>coverage-initialize</id>
@@ -160,10 +171,11 @@
 			</plugin>
 
 			<!-- maven-deploy-plugin : Plugin used during the deploy phase (use with artifact repository) -->
+			
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-deploy-plugin</artifactId>
-				<version>2.8.2</version>
+				<version>${maven-deploy-plugin.version}</version>
 				<executions>
 					<execution>
 						<id>default-deploy</id>

@@ -2,15 +2,14 @@ package com.acme.architecture.common.util;
 
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.lang.reflect.InvocationTargetException;
 
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
 import org.junit.jupiter.api.Test;
 
-import com.acme.architecture.testing.util.JUnitTestUtil;
+import com.acme.architecture.testing.junit.util.JUnitTestUtil;
 
 
 public final class ObjectUtilTest {

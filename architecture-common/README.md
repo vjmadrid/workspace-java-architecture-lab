@@ -11,6 +11,8 @@ This library stands out for:
 * Provides  an **abstract component for generating entities or models** 
 * Define **common frameworks** and their versioning (Help to define an architecture)
 
+
+
 Build / Deployment conditions :
 
 * Deploy as a library

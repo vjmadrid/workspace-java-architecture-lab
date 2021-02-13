@@ -12,11 +12,11 @@ import java.lang.reflect.InvocationTargetException;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import com.acme.architecture.event.driven.dummy.DummyGenericEvent;
 import com.acme.architecture.event.driven.entity.GenericEvent;
-import com.acme.architecture.event.driven.factory.dummy.DummyGenericEventDataFactory;
 import com.acme.architecture.testing.junit.util.JUnitTestUtil;
 
-public class GenericEventConverterTest {
+public class GenericEventConverterUtilTest {
 
 	private GenericEvent genericEventTest;
 	
@@ -24,31 +24,31 @@ public class GenericEventConverterTest {
 
 	@BeforeEach
 	public void init() {
-		genericEventTest = DummyGenericEventDataFactory.createSampleDefault();
+		genericEventTest = DummyGenericEvent.createSampleDefault();
 	}
 	
 	@Test
 	public void shouldCreateDefaultConstructor_ThenTrowIllegalStateException() {
 
 		assertThrows(IllegalStateException.class, () -> {
-			new GenericEventConverter();
+			new GenericEventConverterUtil();
 		});
 	}
 	
 	@Test
 	public void whenCallACheckUtilClassWellDefined()
 			throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
-		JUnitTestUtil.checkUtilClassWellDefined(GenericEventConverter.class);
+		JUnitTestUtil.checkUtilClassWellDefined(GenericEventConverterUtil.class);
 	}
 	
 	@Test
 	public void whenCallAConvertGenericEventToJsonWithNull_thenReturnNull() throws Exception {
-		assertNull(GenericEventConverter.convertGenericEventToJson(null));
+		assertNull(GenericEventConverterUtil.convertGenericEventToJson(null));
 	}
 
 	@Test
 	public void whenCallAConvertGenericEventToJson_thenReturnObjectAsJson() throws Exception {
-		String resultJSON = GenericEventConverter.convertGenericEventToJson(genericEventTest);
+		String resultJSON = GenericEventConverterUtil.convertGenericEventToJson(genericEventTest);
 		
 		assertNotNull(resultJSON);
 		assertTrue(resultJSON.contains(PART_JSON_CONTAINS));
@@ -56,20 +56,20 @@ public class GenericEventConverterTest {
 
 	@Test
 	public void whenCallAConvertJsonToGenericEventWithNull_thenReturnNull() throws Exception {
-		assertNull(GenericEventConverter.fromJsonToGenericEvent(null));
+		assertNull(GenericEventConverterUtil.fromJsonToGenericEvent(null));
 	}
 	
 	@Test
 	public void whenCallAConvertJsonToGenericEventWithEmpty_thenReturnNull() throws Exception {
-		assertNull(GenericEventConverter.fromJsonToGenericEvent(""));
+		assertNull(GenericEventConverterUtil.fromJsonToGenericEvent(""));
 	}
 
 	
 	@Test
 	public void whenCallAConvertJsonToObject_thenReturnObject() throws Exception {
-		String resultJSON = GenericEventConverter.convertGenericEventToJson(genericEventTest);
+		String resultJSON = GenericEventConverterUtil.convertGenericEventToJson(genericEventTest);
 	
-		GenericEvent resultObject = GenericEventConverter.fromJsonToGenericEvent(resultJSON);
+		GenericEvent resultObject = GenericEventConverterUtil.fromJsonToGenericEvent(resultJSON);
 		
 		assertNotNull(resultObject);
 		assertEquals(genericEventTest,resultObject);

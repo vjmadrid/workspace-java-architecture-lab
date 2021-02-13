@@ -14,6 +14,11 @@ Note : This exception inherits the global exception of architecture.
 
 
 
+Build / Deployment conditions :
+
+* Deploy as a library
+
+
 
 
 
@@ -30,6 +35,9 @@ Dependencies with architecture projects
 Third Party Dependencies
 
 * Those provided by the architecture libraries
+
+
+
 
 
 ## Prerequisites

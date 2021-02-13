@@ -11,7 +11,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.acme.architecture.event.driven.factory.dummy.DummyGenericEventDataFactory;
+import com.acme.architecture.event.driven.dummy.DummyGenericEvent;
 
 public class GenericEventTest {
 	
@@ -23,9 +23,9 @@ public class GenericEventTest {
 	
 	@BeforeEach
 	public void init() {
-		genericEvent = DummyGenericEventDataFactory.createSampleDefault();
-		cloneGenericEvent =  DummyGenericEventDataFactory.createSampleDefault();
-		anotherGenericEvent = DummyGenericEventDataFactory.createSampleDefault();
+		genericEvent = DummyGenericEvent.createSampleDefault();
+		cloneGenericEvent =  DummyGenericEvent.createSampleDefault();
+		anotherGenericEvent = DummyGenericEvent.createSampleDefault();
 		anotherGenericEvent.setId("2");
 	}
 	

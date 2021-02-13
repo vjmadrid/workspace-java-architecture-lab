@@ -3,9 +3,9 @@ package com.acme.architecture.event.driven.constant;
 import com.acme.architecture.common.constant.GlobalConstant;
 import com.acme.architecture.event.driven.enumerate.GenericEventTypeEnum;
 
-public final class DummyGenericEventConstant {
+public final class ValueDummyGenericEventConstant {
 	
-	private DummyGenericEventConstant() {
+	private ValueDummyGenericEventConstant() {
 	}
 	
 	public static final int TEST_NUM_GENERIC_EVENTS = 3;

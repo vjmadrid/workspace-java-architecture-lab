@@ -39,10 +39,10 @@ public class CatalogDataFactoryArchitectureRule {
 		    .should().haveModifier(FINAL);
 	
 	@ArchTest
-	public static final ArchRule data_factory_classes_constructors_should_have_one_private_constructor = 
+	public static final ArchRule data_factory_classes_constructors_should_have_one_protected_constructor = 
 			constructors()
 			.that().areDeclaredInClassesThat().resideInAnyPackage(ArchUnitPackageConstant.RESIDE_FINAL_PACKAGE_DATA_FACTORY_CLASS)
-			.should().bePrivate();
+			.should().beProtected();
 	
 	@ArchTest
 	public static final ArchRule data_factory_classes_methods_should_be_public_static = 

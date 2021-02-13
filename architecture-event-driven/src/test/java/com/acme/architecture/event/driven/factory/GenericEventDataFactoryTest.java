@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertNull;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import com.acme.architecture.event.driven.constant.DummyGenericEventConstant;
+import com.acme.architecture.event.driven.constant.ValueDummyGenericEventConstant;
 import com.acme.architecture.event.driven.entity.GenericEvent;
 
 public class GenericEventDataFactoryTest {
@@ -20,11 +20,11 @@ public class GenericEventDataFactoryTest {
 
 	@Test
 	public void shouldCreate() {
-		GenericEvent result = GenericEventDataFactory.create(DummyGenericEventConstant.TEST_GENERIC_EVENT_1_ID,DummyGenericEventConstant.TEST_GENERIC_EVENT_1_PARENT_ID, DummyGenericEventConstant.TEST_GENERIC_EVENT_1_NAME,DummyGenericEventConstant.TEST_GENERIC_EVENT_1_TYPE, DummyGenericEventConstant.TEST_GENERIC_EVENT_1_AUTHOR, DummyGenericEventConstant.TEST_GENERIC_EVENT_1_EXPIRATION_SECONDS, DummyGenericEventConstant.TEST_GENERIC_EVENT_1_PAYLOAD);
+		GenericEvent result = GenericEventDataFactory.create(ValueDummyGenericEventConstant.TEST_GENERIC_EVENT_1_ID,ValueDummyGenericEventConstant.TEST_GENERIC_EVENT_1_PARENT_ID, ValueDummyGenericEventConstant.TEST_GENERIC_EVENT_1_NAME,ValueDummyGenericEventConstant.TEST_GENERIC_EVENT_1_TYPE, ValueDummyGenericEventConstant.TEST_GENERIC_EVENT_1_AUTHOR, ValueDummyGenericEventConstant.TEST_GENERIC_EVENT_1_EXPIRATION_SECONDS, ValueDummyGenericEventConstant.TEST_GENERIC_EVENT_1_PAYLOAD);
 		
 		assertNotNull(result);
-		assertEquals(DummyGenericEventConstant.TEST_GENERIC_EVENT_1_ID,result.getId());
-		assertEquals(DummyGenericEventConstant.TEST_GENERIC_EVENT_1_PARENT_ID,result.getParentId());
+		assertEquals(ValueDummyGenericEventConstant.TEST_GENERIC_EVENT_1_ID,result.getId());
+		assertEquals(ValueDummyGenericEventConstant.TEST_GENERIC_EVENT_1_PARENT_ID,result.getParentId());
 		
 		assertNotNull(result.getCreatedDate());
 		assertNull(result.getUpdatedDate());
@@ -33,7 +33,7 @@ public class GenericEventDataFactoryTest {
 	
 	@Test
 	public void shouldCreateWithLong() {
-		GenericEvent result = GenericEventDataFactory.create(1,2, DummyGenericEventConstant.TEST_GENERIC_EVENT_1_NAME,DummyGenericEventConstant.TEST_GENERIC_EVENT_1_TYPE, DummyGenericEventConstant.TEST_GENERIC_EVENT_1_AUTHOR, DummyGenericEventConstant.TEST_GENERIC_EVENT_1_EXPIRATION_SECONDS, DummyGenericEventConstant.TEST_GENERIC_EVENT_1_PAYLOAD);
+		GenericEvent result = GenericEventDataFactory.create(1,2, ValueDummyGenericEventConstant.TEST_GENERIC_EVENT_1_NAME,ValueDummyGenericEventConstant.TEST_GENERIC_EVENT_1_TYPE, ValueDummyGenericEventConstant.TEST_GENERIC_EVENT_1_AUTHOR, ValueDummyGenericEventConstant.TEST_GENERIC_EVENT_1_EXPIRATION_SECONDS, ValueDummyGenericEventConstant.TEST_GENERIC_EVENT_1_PAYLOAD);
 		
 		assertNotNull(result);
 		assertEquals("1",result.getId());
@@ -42,11 +42,6 @@ public class GenericEventDataFactoryTest {
 		assertNotNull(result.getCreatedDate());
 		assertNull(result.getUpdatedDate());
 		assertNull(result.getDeletedDate());
-	}
-	
-	@Test
-	public void shouldCreateDefaultConstructor() {
-		assertNotNull(new GenericEventDataFactory());
 	}
 
 }

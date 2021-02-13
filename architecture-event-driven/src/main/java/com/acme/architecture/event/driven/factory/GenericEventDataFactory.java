@@ -4,6 +4,10 @@ import java.util.Date;
 import com.acme.architecture.event.driven.entity.GenericEvent;
 
 public final class GenericEventDataFactory {
+	
+	protected GenericEventDataFactory() {
+		throw new IllegalStateException("GenericEventDataFactory");
+	}
 
 	public static GenericEvent create(String id, String parentId, String name,  String type, String author, long expirationSeconds, String payload) {
 		final GenericEvent genericEvent = new GenericEvent();

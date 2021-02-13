@@ -2,7 +2,7 @@ package com.acme.architecture.testing.example.factory.dummy;
 
 public final class DummyExampleDataFactory {
 	
-	private DummyExampleDataFactory() {
+	protected DummyExampleDataFactory() {
 		throw new IllegalStateException("DummyExampleDataFactory");
 	}
 

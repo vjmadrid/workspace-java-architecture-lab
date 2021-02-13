@@ -6,12 +6,12 @@ import org.junit.jupiter.api.Test;
 
 import com.acme.architecture.testing.junit.util.JUnitTestUtil;
 
-public class DummyGenericEventConstantTest {
+public class ValueDummyGenericEventConstantTest {
 
 	@Test
 	public void whenCheckConstantClassWellDefined() throws NoSuchMethodException, InvocationTargetException,
 			InstantiationException, IllegalAccessException {
-		JUnitTestUtil.checkConstantClassWellDefined(DummyGenericEventConstant.class);
+		JUnitTestUtil.checkConstantClassWellDefined(ValueDummyGenericEventConstant.class);
 	}
 
 }

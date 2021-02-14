@@ -4,7 +4,7 @@ import java.lang.reflect.InvocationTargetException;
 
 import org.junit.jupiter.api.Test;
 
-import com.acme.architecture.testing.util.JUnitTestUtil;
+import com.acme.architecture.testing.junit.util.JUnitTestUtil;
 
 public class PageableConstantTest {
 
@@ -13,4 +13,5 @@ public class PageableConstantTest {
 			throws NoSuchMethodException, InvocationTargetException, InstantiationException, IllegalAccessException {
 		JUnitTestUtil.checkConstantClassWellDefined(PageableConstant.class);
 	}
+	
 }

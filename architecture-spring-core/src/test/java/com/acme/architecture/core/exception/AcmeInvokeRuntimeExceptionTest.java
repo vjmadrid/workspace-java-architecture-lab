@@ -5,6 +5,8 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Test;
 import org.springframework.http.HttpStatus;
 
+import com.acme.architecture.core.exception.AcmeInvokeRuntimeException;
+
 public class AcmeInvokeRuntimeExceptionTest {
 
 	private static final String MESSAGE = "message";
@@ -18,5 +20,13 @@ public class AcmeInvokeRuntimeExceptionTest {
 		assertEquals(MESSAGE, acmeInvokeRuntimeException.getMessage());
 		assertEquals(STATUS, acmeInvokeRuntimeException.getStatus());
 		assertEquals(ERROR, acmeInvokeRuntimeException.getError());		
+	}
+	
+	@Test
+	public void testAcmeInvokeRuntimeExceptionSecondConstructor() {
+
+		AcmeInvokeRuntimeException acmeInvokeRuntimeException = new AcmeInvokeRuntimeException(MESSAGE, STATUS);
+		assertEquals(MESSAGE, acmeInvokeRuntimeException.getMessage());
+		assertEquals(STATUS, acmeInvokeRuntimeException.getStatus());
 	}
 }

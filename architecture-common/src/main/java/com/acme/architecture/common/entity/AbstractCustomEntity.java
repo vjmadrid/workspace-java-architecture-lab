@@ -4,7 +4,7 @@ import java.io.Serializable;
 
 public abstract class AbstractCustomEntity implements Serializable {
 
-	private static final long serialVersionUID = -5199514979931305823L;
+	private static final long serialVersionUID = 8205274245698638280L;
 
 	@Override
 	public abstract int hashCode();

@@ -8,7 +8,7 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>dae-architecture-core</name>
+	<name>architecture-spring-core</name>
 	<description></description>
 
 	<properties>
@@ -18,21 +18,24 @@
 		<java.version>1.8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-		<!-- *** Architecture Libraries *** -->
-		<architecture-testing.version>0.0.1-SNAPSHOT</architecture-testing.version>
-		<architecture-common.version>0.0.1-SNAPSHOT</architecture-common.version>
+		<!-- Architecture libraries -->
+		<acme-architecture-testing-spring.version>0.0.1-SNAPSHOT</acme-architecture-testing-spring.version>
+		<acme-architecture-common.version>0.0.1-SNAPSHOT</acme-architecture-common.version>
 
 		<!-- Dependency Versions -->
-		<spring-boot.version>2.2.0.RELEASE</spring-boot.version>
-		<spring.version>5.2.0.RELEASE</spring.version>
-		<springfox.version>2.9.2</springfox.version>
-		<swagger.version>1.5.21</swagger.version>
+		<spring-boot.version>2.3.4.RELEASE</spring-boot.version>
+		<spring.version>5.2.9.RELEASE</spring.version>
+		<springfox.version>3.0.0</springfox.version>
+		<swagger.version>1.6.2</swagger.version>
 
 		<!-- Plugins -->
 		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
 		<maven-resources-plugin.version>3.1.0</maven-resources-plugin.version>
 		<maven-surefire-plugin.version>2.22.2</maven-surefire-plugin.version>
+		<maven-failsafe-plugin.version>2.22.2</maven-failsafe-plugin.version>
 		<jacoco-maven-plugin.version>0.8.5</jacoco-maven-plugin.version>
+		<maven-deploy-plugin.version>2.8.2</maven-deploy-plugin.version>
+		
 	</properties>
 
 	<!-- <profiles> They are found definitively in in ~/.m2/settings.xml -->
@@ -40,16 +43,32 @@
 	<dependencies>
 
 		<!-- *** Architecture Libraries *** -->
+		
+		<!-- architecture-testing-spring: Custom Testing Library
+			Include : 
+				* JUnit, Mockito, ...
+				* archunit + custom rules
+				
+		-->
+		
 		<dependency>
 			<groupId>com.acme.architecture.testing</groupId>
-			<artifactId>architecture-testing</artifactId>
-			<version>${architecture-testing.version}</version>
+			<artifactId>architecture-testing-spring</artifactId>
+			<version>${acme-architecture-testing-spring.version}</version>
 		</dependency>
+		
+		<!-- architecture-common : Custom Common Library
+			Include : 
+				* Generic Exception
+				* Constants
+				* ...
+				
+		-->
 
 		<dependency>
 			<groupId>com.acme.architecture.common</groupId>
 			<artifactId>architecture-common</artifactId>
-			<version>${architecture-common.version}</version>
+			<version>${acme-architecture-common.version}</version>
 		</dependency>
 
 		<!-- Modules -->
@@ -72,26 +91,6 @@
 			<version>${spring-boot.version}</version>
 		</dependency>
 
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-test</artifactId>
-			<version>${spring-boot.version}</version>
-			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>junit</groupId>
-					<artifactId>junit</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<dependency>
-			<groupId>org.springframework</groupId>
-			<artifactId>spring-test</artifactId>
-			<version>${spring.version}</version>
-			<scope>test</scope>
-		</dependency>
-
 		<!-- *** Third Party Libraries *** -->
 
 		<!-- spring-aspects : class utilities -->
@@ -104,30 +103,7 @@
 		<!-- springfox-swagger : API Rest documentation -->
 		<dependency>
 			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger2</artifactId>
-			<version>${springfox.version}</version>
-			<!-- Exclusion by problem with version number -->
-			<exclusions>
-				<exclusion>
-					<groupId>io.swagger</groupId>
-					<artifactId>swagger-annotations</artifactId>
-				</exclusion>
-				<exclusion>
-					<groupId>io.swagger</groupId>
-					<artifactId>swagger-models</artifactId>
-				</exclusion>
-			</exclusions>
-		</dependency>
-
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-bean-validators</artifactId>
-			<version>${springfox.version}</version>
-		</dependency>
-
-		<dependency>
-			<groupId>io.springfox</groupId>
-			<artifactId>springfox-swagger-ui</artifactId>
+			<artifactId>springfox-boot-starter</artifactId>
 			<version>${springfox.version}</version>
 		</dependency>
 
@@ -147,12 +123,31 @@
 			<version>${swagger.version}</version>
 		</dependency>
 
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-bean-validators</artifactId>
+			<version>${springfox.version}</version>
+		</dependency>
+
+		<dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-oas</artifactId>
+			<version>${springfox.version}</version>
+		</dependency>
+		
+		<!-- Required for pagination testing -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+			<version>${spring.version}</version>
+			<scope>test</scope>
+		</dependency>
 
 
 	</dependencies>
 
 	<build>
-		<finalName>dae-architecture-core</finalName>
+		<finalName>architecture-spring-core</finalName>
 		<plugins>
 
 			<!-- maven-compiler-plugin : Plugin used to compile the project source -->
@@ -183,17 +178,8 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>${maven-surefire-plugin.version}</version>
 				<configuration>
-
-					<includes>
-						<include>**/Test*.java</include>
-						<include>**/*Test.java</include>
-						<include>**/*Tests.java</include>
-						<include>**/*TestCase.java</include>
-					</includes>
-
 					<skipTests>${skip.unit.tests}</skipTests>
 					<testFailureIgnore>false</testFailureIgnore>
-
 					<properties>
 						<configurationParameters>
 							junit.jupiter.execution.parallel.enabled=true
@@ -202,8 +188,28 @@
 							junit.platform.output.capture.stderr=true
 						</configurationParameters>
 					</properties>
-
 				</configuration>
+			</plugin>
+			
+			<!-- maven-failsafe-plugin : Plugin used to run integration tests -->
+			<plugin>
+				<artifactId>maven-failsafe-plugin</artifactId>
+				<version>${maven-surefire-plugin.version}</version>
+				<configuration>
+					<skipITs>${skip.integration.tests}</skipITs>
+					<includes>
+						<include>**/*TestIT</include>
+						<include>**/*TestITCase</include>
+					</includes>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>integration-test</goal>
+							<goal>verify</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 
 			<!-- jacoco-maven-plugin : Plugin used to generate code coverage -->
@@ -251,12 +257,11 @@
 				</executions>
 			</plugin>
 
-			<!-- maven-deploy-plugin : Plugin used during the deploy phase (use with 
-				artifact repository) -->
+			<!-- maven-deploy-plugin : Plugin used during the deploy phase (use with artifact repository) -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-deploy-plugin</artifactId>
-				<version>2.8.2</version>
+				<version>${maven-deploy-plugin.version}</version>
 				<executions>
 					<execution>
 						<id>default-deploy</id>

@@ -15,7 +15,7 @@ import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.context.annotation.ClassPathBeanDefinitionScanner;
 import org.springframework.core.type.filter.AnnotationTypeFilter;
 
-public class AcmeReflectionSpringUtil {
+public final class AcmeReflectionSpringUtil {
 	
 	protected AcmeReflectionSpringUtil() {
 		throw new IllegalStateException("ReflectionSpringUtil");

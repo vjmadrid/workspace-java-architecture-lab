@@ -11,6 +11,6 @@ public final class SwaggerConstant {
 
 	public static final String SWAGGER_OUTPUT_DIR_DEFAULT = "src/main/resources/swagger";
 
-	public static final String SWAGGER_URL_PATH_JSON = "/v2/api-docs"; // Non-Compliant
+	public static final String SWAGGER_URL_PATH_JSON = "/v3/api-docs"; // Non-Compliant
 
 }

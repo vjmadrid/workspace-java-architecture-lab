@@ -21,7 +21,7 @@
 		<acme-architecture-testing.version>0.0.1-SNAPSHOT</acme-architecture-testing.version>
 
 		<!-- Dependency Versions -->
-		<h2.version>1.4.200</h2.version>
+		<h2.version>2.0.206</h2.version>
 		<liquibase-core.version>3.8.8</liquibase-core.version>
 
 		<!-- Plugins -->

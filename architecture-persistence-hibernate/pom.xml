@@ -22,7 +22,7 @@
 		<acme-architecture-persistence.version>0.0.1-SNAPSHOT</acme-architecture-persistence.version>
 
 		<!-- Dependency Versions -->
-		<hibernate.version>5.4.12.Final</hibernate.version>
+		<hibernate.version>5.4.24.Final</hibernate.version>
 		<liquibase-hibernate5.version>3.8</liquibase-hibernate5.version>
 
 		<!-- Plugins -->

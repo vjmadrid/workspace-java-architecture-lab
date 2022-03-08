@@ -22,7 +22,7 @@
 
 		<!-- Dependency Versions -->
 		<h2.version>1.4.200</h2.version>
-		<liquibase-core.version>3.8.8</liquibase-core.version>
+		<liquibase-core.version>4.8.0</liquibase-core.version>
 
 		<!-- Plugins -->
 		<maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>

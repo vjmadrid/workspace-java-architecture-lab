@@ -22,7 +22,7 @@
 		<acme-architecture-testing.version>0.0.1-SNAPSHOT</acme-architecture-testing.version>
 		
 		<!-- Dependency Versions -->
-		<spring-boot-starter-parent.version>2.3.4.RELEASE</spring-boot-starter-parent.version>
+		<spring-boot-starter-parent.version>2.5.12</spring-boot-starter-parent.version>
 		
 		<archunit.version>0.14.1</archunit.version>
 		

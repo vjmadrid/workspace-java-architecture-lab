@@ -23,7 +23,7 @@
 		<acme-architecture-common.version>0.0.1-SNAPSHOT</acme-architecture-common.version>
 
 		<!-- Dependency Versions -->
-		<spring-boot.version>2.3.4.RELEASE</spring-boot.version>
+		<spring-boot.version>2.5.12</spring-boot.version>
 		<spring.version>5.2.9.RELEASE</spring.version>
 		<springfox.version>3.0.0</springfox.version>
 		<swagger.version>1.6.2</swagger.version>
